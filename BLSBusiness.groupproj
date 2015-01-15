@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{DED206AC-E9F7-4F73-8548-E49F984C2927}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Desktop\Business.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ServerService\BusinessSrvService.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Business">
+        <MSBuild Projects="Desktop\Business.dproj"/>
+    </Target>
+    <Target Name="Business:Clean">
+        <MSBuild Projects="Desktop\Business.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Business:Make">
+        <MSBuild Projects="Desktop\Business.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="BusinessSrvService">
+        <MSBuild Projects="ServerService\BusinessSrvService.dproj"/>
+    </Target>
+    <Target Name="BusinessSrvService:Clean">
+        <MSBuild Projects="ServerService\BusinessSrvService.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="BusinessSrvService:Make">
+        <MSBuild Projects="ServerService\BusinessSrvService.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Business;BusinessSrvService"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Business:Clean;BusinessSrvService:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Business:Make;BusinessSrvService:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

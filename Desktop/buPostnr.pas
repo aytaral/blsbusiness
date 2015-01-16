@@ -33,9 +33,9 @@ begin
 
   AFylke := TFylke.Create;
   if FylkeNode.SelectNode('nummer', ANode) then
-    AFylke.Fylkenr := ANode.NodeValue;
+    AFylke.Fylkenr := ANode.Text;
   if FylkeNode.SelectNode('navn', ANode) then
-    AFylke.Fylke := ANode.NodeValue;
+    AFylke.Fylke := ANode.Text;
 
   if AFylke.Fylke <> '' then
     Result := AFylke;

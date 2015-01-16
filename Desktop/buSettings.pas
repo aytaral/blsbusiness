@@ -2,7 +2,7 @@ unit buSettings;
 
 interface
 
-uses Classes, SysUtils, Rest.Json, System.JSON;
+uses System.SysUtils, System.Classes, Rest.Json, System.JSON;
 
 type
   TSettings = class(TObject)
@@ -12,12 +12,16 @@ type
     FUsername: String;
     FPassword: String;
     FPort: Integer;
+    FDataURL: String;
+    FPostnrURL: String;
   public
     property Server: String read FServer write FServer;
     property Database: String read FDatabase write FDatabase;
     property Username: String read FUsername write FUsername;
     property Password: String read FPassword write FPassword;
     property Port: Integer read FPort write FPort;
+    property DataURL: String read FDataURL write FDataURL;
+    property PostnrURL: String read FPostnrURL write FPostnrURL;
     constructor Create();
   end;
 
@@ -26,6 +30,9 @@ type
     class function LoadFromFile(Path: String = ''): TSettings;
     class procedure SaveToFile(Settings: TSettings; Path: String = '');
   end;
+
+var
+  Settings: TSettings;
 
 implementation
 
@@ -71,5 +78,11 @@ constructor TSettings.Create;
 begin
   FPort := 0;
 end;
+
+initialization
+  Settings := TSettingsHandler.LoadFromFile();
+
+finalization
+  Settings.Free;
 
 end.

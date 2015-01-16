@@ -6,7 +6,7 @@ uses
   System.SysUtils, System.Classes, FireDAC.Stan.Intf, FireDAC.Stan.Option,
   FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
   FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, Data.DB,
-  FireDAC.Comp.Client, FireDAC.Phys.MSSQL, buSettings, FireDAC.Stan.Param,
+  FireDAC.Comp.Client, FireDAC.Phys.MSSQL, FireDAC.Stan.Param,
   FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.VCLUI.Wait, FireDAC.Comp.UI,
   FireDAC.Phys.ODBCBase, FireDAC.DApt, FireDAC.Comp.DataSet;
 
@@ -50,12 +50,10 @@ type
     fdKontaktBrukerID: TStringField;
     procedure FDConnBeforeConnect(Sender: TObject);
     procedure DataModuleCreate(Sender: TObject);
-    procedure DataModuleDestroy(Sender: TObject);
     procedure fdKontaktNewRecord(DataSet: TDataSet);
   private
     { Private declarations }
   public
-    Settings: TSettings;
     { Public declarations }
   end;
 
@@ -64,19 +62,15 @@ var
 
 implementation
 
+uses buSettings;
+
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 
 {$R *.dfm}
 
 procedure TdmData.DataModuleCreate(Sender: TObject);
 begin
-  Settings := TSettingsHandler.LoadFromFile();
   FDConn.Open;
-end;
-
-procedure TdmData.DataModuleDestroy(Sender: TObject);
-begin
-  Settings.Free;
 end;
 
 procedure TdmData.FDConnBeforeConnect(Sender: TObject);

@@ -1,14 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899.12.30 00:00:00.000.971,D:\XE6\Business\buMainform.pas=C:\Users\BjornLa\Documents\Embarcadero\Studio\Projects\Unit3.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.170,=D:\XE6\Business\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.431,D:\XE6\Business\Desktop\Unit1.pas=D:\XE6\Business\Desktop\buSettings.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.290,=D:\XE6\Business\Desktop\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.391,D:\XE6\Business\Business.dproj=C:\Users\BjornLa\Documents\Embarcadero\Studio\Projects\Project3.dproj</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.971,D:\XE6\Business\buMainform.dfm=C:\Users\BjornLa\Documents\Embarcadero\Studio\Projects\Unit3.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.903,D:\XE6\Business\buData.pas=D:\XE6\Business\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.903,D:\XE6\Business\buData.dfm=D:\XE6\Business\Unit1.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.894,=C:\Users\BjornLa\Documents\Embarcadero\Studio\Projects\Unit3.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.903,D:\XE6\Business\Unit1.pas=D:\XE6\Business\buData.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.227,D:\XE6\Business\Desktop\Unit1.dfm=D:\XE6\Business\Desktop\buDataSync.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.903,D:\XE6\Business\Unit1.dfm=D:\XE6\Business\buData.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.971,C:\Users\BjornLa\Documents\Embarcadero\Studio\Projects\Unit3.dfm=D:\XE6\Business\buMainform.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.971,C:\Users\BjornLa\Documents\Embarcadero\Studio\Projects\Unit3.pas=D:\XE6\Business\buMainform.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.391,C:\Users\BjornLa\Documents\Embarcadero\Studio\Projects\Project3.dproj=D:\XE6\Business\Business.dproj</Transaction>
   </Transactions>
 </BorlandProject>

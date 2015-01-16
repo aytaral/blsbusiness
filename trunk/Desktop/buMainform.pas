@@ -17,8 +17,10 @@ type
     cxGrid1: TcxGrid;
     Button1: TButton;
     Button2: TButton;
+    Button3: TButton;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -30,7 +32,7 @@ var
 
 implementation
 
-uses buData, buSettings;
+uses buData, buSettings, buDataSync;
 
 {$R *.dfm}
 
@@ -43,6 +45,11 @@ procedure TfrmMainform.Button2Click(Sender: TObject);
 begin
   dmData.fdKontakt.ApplyUpdates(0);
   dmData.fdKontakt.CommitUpdates;
+end;
+
+procedure TfrmMainform.Button3Click(Sender: TObject);
+begin
+  frmDataSync.ShowModal;
 end;
 
 end.

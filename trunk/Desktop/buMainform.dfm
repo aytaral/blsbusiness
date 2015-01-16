@@ -49,4 +49,13 @@ object frmMainform: TfrmMainform
     TabOrder = 2
     OnClick = Button2Click
   end
+  object Button3: TButton
+    Left = 0
+    Top = 0
+    Width = 75
+    Height = 25
+    Caption = 'Button3'
+    TabOrder = 3
+    OnClick = Button3Click
+  end
 end

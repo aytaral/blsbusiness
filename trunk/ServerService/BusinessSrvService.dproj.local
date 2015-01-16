@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899.12.30 00:00:00.000.917,D:\XE6\Business\ServerService\buServerMethods.dfm=C:\Users\BjornLa\Documents\Embarcadero\Studio\Projects\ServerMethodsUnit1.dfm</Transaction>
     <Transaction>1899.12.30 00:00:00.000.626,=C:\Users\BjornLa\Documents\Embarcadero\Studio\Projects\ServerContainerUnit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.477,D:\XE6\Business\ServerService\buServerContainer.dfm=C:\Users\BjornLa\Documents\Embarcadero\Studio\Projects\ServerContainerUnit1.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.917,D:\XE6\Business\ServerService\buServerMethods.pas=C:\Users\BjornLa\Documents\Embarcadero\Studio\Projects\ServerMethodsUnit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.477,D:\XE6\Business\ServerService\buServerContainer.pas=C:\Users\BjornLa\Documents\Embarcadero\Studio\Projects\ServerContainerUnit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.381,D:\XE6\Business\ServerService\BusinessSrvService.dproj=C:\Users\BjornLa\Documents\Embarcadero\Studio\Projects\Project3.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.477,C:\Users\BjornLa\Documents\Embarcadero\Studio\Projects\ServerContainerUnit1.pas=D:\XE6\Business\ServerService\buServerContainer.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.477,C:\Users\BjornLa\Documents\Embarcadero\Studio\Projects\ServerContainerUnit1.dfm=D:\XE6\Business\ServerService\buServerContainer.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.917,C:\Users\BjornLa\Documents\Embarcadero\Studio\Projects\ServerMethodsUnit1.dfm=D:\XE6\Business\ServerService\buServerMethods.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.381,C:\Users\BjornLa\Documents\Embarcadero\Studio\Projects\Project3.dproj=D:\XE6\Business\ServerService\BusinessSrvService.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.917,C:\Users\BjornLa\Documents\Embarcadero\Studio\Projects\ServerMethodsUnit1.pas=D:\XE6\Business\ServerService\buServerMethods.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.355,=C:\Users\BjornLa\Documents\Embarcadero\Studio\Projects\ServerMethodsUnit1.pas</Transaction>
   </Transactions>
 </BorlandProject>

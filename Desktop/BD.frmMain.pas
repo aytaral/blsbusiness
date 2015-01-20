@@ -1,4 +1,4 @@
-unit Business.frmMain;
+unit BD.frmMain;
 
 interface
 
@@ -32,7 +32,7 @@ var
 
 implementation
 
-uses buData, buSettings, buDataSync;
+uses Business.dmData, Business.Settings, Business.frmSync;
 
 {$R *.dfm}
 

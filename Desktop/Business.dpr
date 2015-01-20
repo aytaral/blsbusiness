@@ -2,13 +2,13 @@ program Business;
 
 uses
   Vcl.Forms,
-  Business.frmMain in 'Business.frmMain.pas' {frmMainform},
-  Business.dmData in 'Business.dmData.pas' {dmData: TDataModule},
-  Business.Settings in 'Business.Settings.pas',
-  Business.frmSync in 'Business.frmSync.pas' {frmDataSync},
-  Business.Fylke in 'Business.Fylke.pas',
-  Business.Utils in 'Business.Utils.pas',
-  Business.dmMain in 'Business.dmMain.pas' {dmMain: TDataModule};
+  BD.frmMain in 'BD.frmMain.pas' {frmMainform},
+  BD.dmData in 'BD.dmData.pas' {dmData: TDataModule},
+  BD.Settings in 'BD.Settings.pas',
+  BD.frmSync in 'BD.frmSync.pas' {frmDataSync},
+  BD.Fylke in 'BD.Fylke.pas',
+  BD.Utils in 'BD.Utils.pas',
+  BD.dmMain in 'BD.dmMain.pas' {dmMain: TDataModule};
 
 {$R *.res}
 

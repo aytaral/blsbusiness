@@ -1,4 +1,4 @@
-unit buSettings;
+unit BD.Settings;
 
 interface
 

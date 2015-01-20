@@ -1,9 +1,9 @@
-unit buPostnr;
+unit BD.Fylke;
 
 interface
 
 uses System.SysUtils, System.Classes, Xml.XMLIntf, Data.DB, OXmlPDOM,
-  Generics.Collections, System.TypInfo, buUtils;
+  Generics.Collections, System.TypInfo, Business.Utils;
 
 type
 

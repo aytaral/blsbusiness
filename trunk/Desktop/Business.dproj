@@ -85,23 +85,23 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="Business.frmMain.pas">
+        <DCCReference Include="BD.frmMain.pas">
             <Form>frmMainform</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="Business.dmData.pas">
+        <DCCReference Include="BD.dmData.pas">
             <Form>dmData</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="Business.Settings.pas"/>
-        <DCCReference Include="Business.frmSync.pas">
+        <DCCReference Include="BD.Settings.pas"/>
+        <DCCReference Include="BD.frmSync.pas">
             <Form>frmDataSync</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="Business.Fylke.pas"/>
-        <DCCReference Include="Business.Utils.pas"/>
-        <DCCReference Include="Business.dmMain.pas">
+        <DCCReference Include="BD.Fylke.pas"/>
+        <DCCReference Include="BD.Utils.pas"/>
+        <DCCReference Include="BD.dmMain.pas">
             <Form>dmMain</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>

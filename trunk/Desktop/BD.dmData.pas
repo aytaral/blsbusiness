@@ -1,4 +1,4 @@
-unit Business.dmData;
+unit BD.dmData;
 
 interface
 
@@ -62,7 +62,7 @@ var
 
 implementation
 
-uses buSettings;
+uses Business.Settings;
 
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 

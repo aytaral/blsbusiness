@@ -1,4 +1,4 @@
-unit Business.frmSync;
+unit BD.frmSync;
 
 interface
 
@@ -34,7 +34,7 @@ var
 
 implementation
 
-uses csXMLUtil, buSettings, buPostnr;
+uses csXMLUtil, Business.Settings, Business.Fylke, Business.Utils;
 
 {$R *.dfm}
 

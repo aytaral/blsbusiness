@@ -32,7 +32,7 @@ var
 
 implementation
 
-uses Business.dmData, Business.Settings, Business.frmSync;
+uses BD.dmData, BD.Settings, BD.frmSync;
 
 {$R *.dfm}
 

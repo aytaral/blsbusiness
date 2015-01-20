@@ -34,7 +34,7 @@ var
 
 implementation
 
-uses csXMLUtil, Business.Settings, Business.Fylke, Business.Utils;
+uses BD.Settings, BD.Fylke, BD.Utils;
 
 {$R *.dfm}
 

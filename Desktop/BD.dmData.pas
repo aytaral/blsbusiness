@@ -62,7 +62,7 @@ var
 
 implementation
 
-uses Business.Settings;
+uses BD.Settings;
 
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 

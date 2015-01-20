@@ -2,8 +2,8 @@ unit BD.Fylke;
 
 interface
 
-uses System.SysUtils, System.Classes, Xml.XMLIntf, Data.DB, OXmlPDOM,
-  Generics.Collections, System.TypInfo, BD.Utils;
+uses System.SysUtils, System.Classes, Data.DB, OXmlPDOM,
+  Generics.Collections, System.TypInfo, BD.Utils, Spring.Collections;
 
 type
 
@@ -16,7 +16,7 @@ type
     property Fylke: String read FFylke write FFylke;
   end;
 
-  TFylkeListe = TObjectList<TFylke>;
+  TFylkeListe = IList<TFylke>;
 
   TFylkeHandler = class(TObject)
     class function LoadFromXMLNode(FylkeNode: PXMLNode;
@@ -24,19 +24,6 @@ type
     class function SetDatabaseFields(AFylke: TFylke; ADataSet: TDataSet;
       const Mapping: TMapList): Boolean;
   end;
-
-  TKommune = class(TObject)
-  private
-    FKommunenr: String;
-    FKommune: String;
-    FFylke: TFylke;
-  published
-    property Kommunenr: String read FKommunenr write FKommunenr;
-    property Kommune: String read FKommune write FKommune;
-    property Fylke: TFylke read FFylke write FFylke;
-  end;
-
-  TKommuneListe = TObjectList<TKommune>;
 
 implementation
 

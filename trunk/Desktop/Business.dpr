@@ -1,6 +1,7 @@
 program Business;
 
 uses
+  FastMM4,
   Vcl.Forms,
   BD.frmMain in 'BD.frmMain.pas' {frmMainform},
   BD.dmData in 'BD.dmData.pas' {dmData: TDataModule},
@@ -8,7 +9,9 @@ uses
   BD.frmSync in 'BD.frmSync.pas' {frmDataSync},
   BD.Fylke in 'BD.Fylke.pas',
   BD.Utils in 'BD.Utils.pas',
-  BD.dmMain in 'BD.dmMain.pas' {dmMain: TDataModule};
+  BD.dmMain in 'BD.dmMain.pas' {dmMain: TDataModule},
+  BD.Kommune in 'BD.Kommune.pas',
+  BD.Postnr in 'BD.Postnr.pas';
 
 {$R *.res}
 
@@ -17,7 +20,7 @@ begin
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TfrmMainform, frmMainform);
   Application.CreateForm(TdmData, dmData);
-  Application.CreateForm(TfrmDataSync, frmDataSync);
   Application.CreateForm(TdmMain, dmMain);
+  Application.CreateForm(TfrmDataSync, frmDataSync);
   Application.Run;
 end.

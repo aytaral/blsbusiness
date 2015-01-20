@@ -1,4 +1,4 @@
-unit buMainform;
+unit Business.frmMain;
 
 interface
 

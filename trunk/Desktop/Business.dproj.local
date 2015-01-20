@@ -4,8 +4,17 @@
     <Transaction>1899.12.30 00:00:00.000.903,D:\XE6\Business\Unit1.pas=D:\XE6\Business\buData.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.227,D:\XE6\Business\Desktop\Unit1.dfm=D:\XE6\Business\Desktop\buDataSync.dfm</Transaction>
     <Transaction>1899.12.30 00:00:00.000.903,D:\XE6\Business\Unit1.dfm=D:\XE6\Business\buData.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.971,C:\Users\BjornLa\Documents\Embarcadero\Studio\Projects\Unit3.dfm=D:\XE6\Business\buMainform.dfm</Transaction>
     <Transaction>1899.12.30 00:00:00.000.971,C:\Users\BjornLa\Documents\Embarcadero\Studio\Projects\Unit3.pas=D:\XE6\Business\buMainform.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.391,C:\Users\BjornLa\Documents\Embarcadero\Studio\Projects\Project3.dproj=D:\XE6\Business\Business.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.971,C:\Users\BjornLa\Documents\Embarcadero\Studio\Projects\Unit3.dfm=D:\XE6\Business\buMainform.dfm</Transaction>
+    <Transaction>2015.01.20 11:00:17.698,D:\XE6\Business\Desktop\dmMain.dfm=D:\XE6\Business\Desktop\Unit1.dfm</Transaction>
+    <Transaction>2015.01.20 11:00:25.019,D:\XE6\Business\Desktop\unUtils.pas=D:\XE6\Business\Desktop\buUtils.pas</Transaction>
+    <Transaction>2015.01.20 11:00:39.315,D:\XE6\Business\Desktop\unFylke.pas=D:\XE6\Business\Desktop\buPostnr.pas</Transaction>
+    <Transaction>2015.01.20 11:07:37.672,D:\XE6\Business\Desktop\Business.dmMain.dfm=D:\XE6\Business\Desktop\dmMain.dfm</Transaction>
+    <Transaction>2015.01.20 11:08:22.257,D:\XE6\Business\Desktop\Business.dmData.dfm=D:\XE6\Business\Desktop\buData.dfm</Transaction>
+    <Transaction>2015.01.20 11:08:39.539,D:\XE6\Business\Desktop\Business.frmMain.dfm=D:\XE6\Business\Desktop\buMainform.dfm</Transaction>
+    <Transaction>2015.01.20 11:09:04.939,D:\XE6\Business\Desktop\Business.frmSync.dfm=D:\XE6\Business\Desktop\buDataSync.dfm</Transaction>
+    <Transaction>2015.01.20 11:09:28.202,D:\XE6\Business\Desktop\Business.pas=D:\XE6\Business\Desktop\buSettings.pas</Transaction>
+    <Transaction>2015.01.20 11:09:52.690,D:\XE6\Business\Desktop\Business.Settings.Settings=D:\XE6\Business\Desktop\Business.Settings</Transaction>
   </Transactions>
 </BorlandProject>

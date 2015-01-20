@@ -18,6 +18,8 @@ var
 
 implementation
 
+uses BD.dmData;
+
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 
 {$R *.dfm}

@@ -3,7 +3,7 @@ unit BD.Fylke;
 interface
 
 uses System.SysUtils, System.Classes, Xml.XMLIntf, Data.DB, OXmlPDOM,
-  Generics.Collections, System.TypInfo, Business.Utils;
+  Generics.Collections, System.TypInfo, BD.Utils;
 
 type
 

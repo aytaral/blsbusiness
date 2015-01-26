@@ -14,7 +14,7 @@ uses
   dxRibbonGallery, dxRibbonBackstageView, dxRibbonForm, Vcl.ImgList,
   dxSkinsCore, dxSkinOffice2010Black, dxSkinscxPCPainter,
   dxSkinsdxRibbonPainter, dxSkinsdxBarPainter, dxSkinsForm, cxPCdxBarPopupMenu,
-  cxPC;
+  cxPC, System.Actions, Vcl.ActnList;
 
 type
   TfrmMainform = class(TdxRibbonForm)
@@ -55,9 +55,20 @@ type
     cxGrid1: TcxGrid;
     cxGrid1DBTableView1: TcxGridDBTableView;
     cxGrid1Level1: TcxGridLevel;
+    ActionList1: TActionList;
+    Action1: TAction;
+    Action2: TAction;
+    Action3: TAction;
+    Action4: TAction;
+    dxBarLargeButton3: TdxBarLargeButton;
+    dxBarLargeButton4: TdxBarLargeButton;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
+    procedure Action1Execute(Sender: TObject);
+    procedure Action2Execute(Sender: TObject);
+    procedure Action3Execute(Sender: TObject);
+    procedure Action4Execute(Sender: TObject);
   private
     { Private declarations }
   public
@@ -72,6 +83,29 @@ implementation
 uses BD.dmData, BD.Settings, BD.frmSync;
 
 {$R *.dfm}
+
+procedure TfrmMainform.Action1Execute(Sender: TObject);
+begin
+  //
+end;
+
+procedure TfrmMainform.Action2Execute(Sender: TObject);
+begin
+  //
+
+end;
+
+procedure TfrmMainform.Action3Execute(Sender: TObject);
+begin
+  //
+
+end;
+
+procedure TfrmMainform.Action4Execute(Sender: TObject);
+begin
+  //
+
+end;
 
 procedure TfrmMainform.Button1Click(Sender: TObject);
 begin

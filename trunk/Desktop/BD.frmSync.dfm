@@ -1,9 +1,10 @@
 object frmDataSync: TfrmDataSync
   Left = 0
   Top = 0
+  BorderStyle = bsDialog
   Caption = 'Synkronisering Generelle data'
-  ClientHeight = 499
-  ClientWidth = 688
+  ClientHeight = 439
+  ClientWidth = 629
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,6 +12,7 @@ object frmDataSync: TfrmDataSync
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poMainFormCenter
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13

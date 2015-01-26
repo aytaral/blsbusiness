@@ -31,8 +31,6 @@ object frmMainform: TfrmMainform
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
-    ExplicitTop = 665
-    ExplicitWidth = 1034
   end
   object dxRibbon1: TdxRibbon
     Left = 0
@@ -171,20 +169,18 @@ object frmMainform: TfrmMainform
       0001000000010000000100000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000}
     ApplicationButton.Menu = dxBarApplicationMenu1
-    ApplicationButton.Text = 'TEst'
+    ApplicationButton.Text = 'Fil'
     BarManager = dxBarManager1
     Style = rs2010
     ColorSchemeName = 'Black'
     QuickAccessToolbar.Toolbar = dxBarManager1Bar1
     SupportNonClientDrawing = True
     Contexts = <>
-    TabOrder = 4
+    TabOrder = 3
     TabStop = False
-    ExplicitTop = -6
-    ExplicitWidth = 1034
     object dxRibbon1Tab1: TdxRibbonTab
       Active = True
-      Caption = 'dxRibbon1Tab1'
+      Caption = 'Hjem'
       Groups = <
         item
         end
@@ -200,19 +196,14 @@ object frmMainform: TfrmMainform
       Index = 0
     end
     object dxRibbon1Tab2: TdxRibbonTab
-      Caption = 'dxRibbon1Tab2'
+      Caption = 'Verkt'#248'y'
       Groups = <>
       Index = 1
     end
     object dxRibbon1Tab3: TdxRibbonTab
-      Caption = 'dxRibbon1Tab3'
+      Caption = 'Rapporter'
       Groups = <>
       Index = 2
-    end
-    object dxRibbon1Tab4: TdxRibbonTab
-      Caption = 'dxRibbon1Tab4'
-      Groups = <>
-      Index = 3
     end
   end
   object cxPageControl1: TcxPageControl
@@ -225,10 +216,6 @@ object frmMainform: TfrmMainform
     Properties.ActivePage = cxTabSheet1
     Properties.CustomButtons.Buttons = <>
     LookAndFeel.NativeStyle = False
-    ExplicitLeft = 24
-    ExplicitTop = 174
-    ExplicitWidth = 457
-    ExplicitHeight = 307
     ClientRectBottom = 450
     ClientRectLeft = 2
     ClientRectRight = 931
@@ -236,10 +223,6 @@ object frmMainform: TfrmMainform
     object cxTabSheet1: TcxTabSheet
       Caption = 'cxTabSheet1'
       ImageIndex = 0
-      ExplicitLeft = 4
-      ExplicitTop = 24
-      ExplicitWidth = 281
-      ExplicitHeight = 165
       object cxGrid1: TcxGrid
         AlignWithMargins = True
         Left = 3
@@ -249,10 +232,6 @@ object frmMainform: TfrmMainform
         Align = alClient
         TabOrder = 0
         LookAndFeel.NativeStyle = False
-        ExplicitLeft = 200
-        ExplicitTop = 132
-        ExplicitWidth = 398
-        ExplicitHeight = 245
         object cxGrid1DBTableView1: TcxGridDBTableView
           Navigator.Buttons.CustomButtons = <>
           DataController.DataSource = dmData.dsKontakt
@@ -296,10 +275,22 @@ object frmMainform: TfrmMainform
     object cxTabSheet2: TcxTabSheet
       Caption = 'cxTabSheet2'
       ImageIndex = 1
-      ExplicitLeft = 4
-      ExplicitTop = 24
-      ExplicitWidth = 281
-      ExplicitHeight = 165
+    end
+    object cxTabSheet3: TcxTabSheet
+      Caption = 'cxTabSheet3'
+      ImageIndex = 2
+    end
+    object cxTabSheet4: TcxTabSheet
+      Caption = 'cxTabSheet4'
+      ImageIndex = 3
+    end
+    object cxTabSheet5: TcxTabSheet
+      Caption = 'cxTabSheet5'
+      ImageIndex = 4
+    end
+    object cxTabSheet6: TcxTabSheet
+      Caption = 'cxTabSheet6'
+      ImageIndex = 5
     end
   end
   object dxBarManager1: TdxBarManager
@@ -526,6 +517,7 @@ object frmMainform: TfrmMainform
         Item = dxBarButton1
       end>
     ExtraPane.Items = <>
+    ExtraPane.Visible = False
     ItemLinks = <
       item
         Visible = True

@@ -26,8 +26,6 @@ type
     dxRibbon1Tab1: TdxRibbonTab;
     dxRibbon1: TdxRibbon;
     dxRibbon1Tab2: TdxRibbonTab;
-    dxRibbon1Tab3: TdxRibbonTab;
-    dxRibbon1Tab4: TdxRibbonTab;
     dxRibbonMiniToolbar1: TdxRibbonMiniToolbar;
     dxBarManager1Bar1: TdxBar;
     dxRibbonPopupMenu1: TdxRibbonPopupMenu;
@@ -62,6 +60,11 @@ type
     Action4: TAction;
     dxBarLargeButton3: TdxBarLargeButton;
     dxBarLargeButton4: TdxBarLargeButton;
+    cxTabSheet3: TcxTabSheet;
+    cxTabSheet4: TcxTabSheet;
+    cxTabSheet5: TcxTabSheet;
+    cxTabSheet6: TcxTabSheet;
+    dxRibbon1Tab3: TdxRibbonTab;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);

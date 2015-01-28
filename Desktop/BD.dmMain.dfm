@@ -1,5 +1,5 @@
 object dmMain: TdmMain
   OldCreateOrder = False
-  Height = 391
-  Width = 646
+  Height = 527
+  Width = 843
 end

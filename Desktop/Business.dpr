@@ -21,6 +21,5 @@ begin
   Application.CreateForm(TfrmMainform, frmMainform);
   Application.CreateForm(TdmData, dmData);
   Application.CreateForm(TdmMain, dmMain);
-  Application.CreateForm(TfrmDataSync, frmDataSync);
   Application.Run;
 end.

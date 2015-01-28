@@ -1,24 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899.12.30 00:00:00.000.202,D:\XE6\Business\Desktop\Business.pas=D:\XE6\Business\Desktop\buSettings.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.690,D:\XE6\Business\Desktop\Business.Settings.Settings=D:\XE6\Business\Desktop\Business.Settings</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.225,D:\XE6\Business\Desktop\Business.dmData.dfm=D:\XE6\Business\Desktop\BD.dmData.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.257,D:\XE6\Business\Desktop\Business.dmData.dfm=D:\XE6\Business\Desktop\buData.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.698,D:\XE6\Business\Desktop\dmMain.dfm=D:\XE6\Business\Desktop\Unit1.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.745,D:\XE6\Business\Desktop\Business.dmMain.dfm=D:\XE6\Business\Desktop\BD.dmMain.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.315,D:\XE6\Business\Desktop\unFylke.pas=D:\XE6\Business\Desktop\buPostnr.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.903,D:\XE6\Business\Unit1.dfm=D:\XE6\Business\buData.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.672,D:\XE6\Business\Desktop\Business.dmMain.dfm=D:\XE6\Business\Desktop\dmMain.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.567,D:\XE6\Business\Desktop\Business.frmMain.dfm=D:\XE6\Business\Desktop\BD.frmMain.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.441,D:\XE6\Business\Desktop\Business.frmSync.dfm=D:\XE6\Business\Desktop\BD.frmSync.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.939,D:\XE6\Business\Desktop\Business.frmSync.dfm=D:\XE6\Business\Desktop\buDataSync.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.971,C:\Users\BjornLa\Documents\Embarcadero\Studio\Projects\Unit3.dfm=D:\XE6\Business\buMainform.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.971,C:\Users\BjornLa\Documents\Embarcadero\Studio\Projects\Unit3.pas=D:\XE6\Business\buMainform.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.391,C:\Users\BjornLa\Documents\Embarcadero\Studio\Projects\Project3.dproj=D:\XE6\Business\Business.dproj</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.019,D:\XE6\Business\Desktop\unUtils.pas=D:\XE6\Business\Desktop\buUtils.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.539,D:\XE6\Business\Desktop\Business.frmMain.dfm=D:\XE6\Business\Desktop\buMainform.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.903,D:\XE6\Business\Unit1.pas=D:\XE6\Business\buData.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.227,D:\XE6\Business\Desktop\Unit1.dfm=D:\XE6\Business\Desktop\buDataSync.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.903,D:\XE6\Business\buData.pas=D:\XE6\Business\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.903,D:\XE6\Business\buData.dfm=D:\XE6\Business\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.225,D:\XE6\Business\Desktop\BD.dmData.dfm=D:\XE6\Business\Desktop\Business.dmData.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.971,D:\XE6\Business\buMainform.dfm=C:\Users\BjornLa\Documents\Embarcadero\Studio\Projects\Unit3.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.672,D:\XE6\Business\Desktop\dmMain.dfm=D:\XE6\Business\Desktop\Business.dmMain.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.690,D:\XE6\Business\Desktop\Business.Settings=D:\XE6\Business\Desktop\Business.Settings.Settings</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.441,D:\XE6\Business\Desktop\BD.frmSync.dfm=D:\XE6\Business\Desktop\Business.frmSync.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.391,D:\XE6\Business\Business.dproj=C:\Users\BjornLa\Documents\Embarcadero\Studio\Projects\Project3.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.539,D:\XE6\Business\Desktop\buMainform.dfm=D:\XE6\Business\Desktop\Business.frmMain.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.202,D:\XE6\Business\Desktop\buSettings.pas=D:\XE6\Business\Desktop\Business.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.227,D:\XE6\Business\Desktop\buDataSync.dfm=D:\XE6\Business\Desktop\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.567,D:\XE6\Business\Desktop\BD.frmMain.dfm=D:\XE6\Business\Desktop\Business.frmMain.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.315,D:\XE6\Business\Desktop\buPostnr.pas=D:\XE6\Business\Desktop\unFylke.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.939,D:\XE6\Business\Desktop\buDataSync.dfm=D:\XE6\Business\Desktop\Business.frmSync.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.257,D:\XE6\Business\Desktop\buData.dfm=D:\XE6\Business\Desktop\Business.dmData.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.019,D:\XE6\Business\Desktop\buUtils.pas=D:\XE6\Business\Desktop\unUtils.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.745,D:\XE6\Business\Desktop\BD.dmMain.dfm=D:\XE6\Business\Desktop\Business.dmMain.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.698,D:\XE6\Business\Desktop\Unit1.dfm=D:\XE6\Business\Desktop\dmMain.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.971,D:\XE6\Business\buMainform.pas=C:\Users\BjornLa\Documents\Embarcadero\Studio\Projects\Unit3.pas</Transaction>
   </Transactions>
 </BorlandProject>

@@ -43,7 +43,7 @@ uses BD.Settings, BD.Utils, Spring.Collections;
 
 procedure TfrmDataSync.IterateFylker(AFylke: PXMLNode);
 var
-  S: String;
+//  S: String;
   MyFylke: TFylke;
   Map: TMapList;
 begin
@@ -60,7 +60,7 @@ end;
 
 procedure TfrmDataSync.IterateKommune(AKommune: PXMLNode);
 var
-  S: String;
+//  S: String;
   MyKommune: TKommune;
   Map: TMapList;
 begin
@@ -80,10 +80,10 @@ begin
 end;
 
 procedure TfrmDataSync.Button1Click(Sender: TObject);
-var
-  I: Integer;
-  S: String;
-  L: TList;
+//var
+//  I: Integer;
+//  S: String;
+//  L: TList;
 
 begin
   IterateXml(Settings.DataURL + 'xml/difi/geo/fylke', 'entries', IterateFylker);

@@ -2,9 +2,9 @@ object frmDataSync: TfrmDataSync
   Left = 0
   Top = 0
   BorderStyle = bsDialog
-  Caption = 'Synkronisering Generelle data'
-  ClientHeight = 439
-  ClientWidth = 629
+  Caption = 'Synkroniser Postadresser'
+  ClientHeight = 119
+  ClientWidth = 361
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,28 +14,44 @@ object frmDataSync: TfrmDataSync
   OldCreateOrder = False
   Position = poMainFormCenter
   OnCreate = FormCreate
+  OnDestroy = FormDestroy
   PixelsPerInch = 96
   TextHeight = 13
-  object Button1: TButton
-    Left = 384
-    Top = 384
-    Width = 75
+  object Label1: TLabel
+    Left = 24
+    Top = 24
+    Width = 54
+    Height = 13
+    Caption = 'Operasjon:'
+  end
+  object lblOperation: TLabel
+    Left = 88
+    Top = 24
+    Width = 56
+    Height = 13
+    Caption = 'Operation'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object btnSync: TButton
+    Left = 248
+    Top = 77
+    Width = 89
     Height = 25
-    Caption = 'Button1'
+    Caption = 'Synkroniser'
     TabOrder = 0
-    OnClick = Button1Click
+    OnClick = btnSyncClick
   end
-  object Memo1: TMemo
-    Left = 32
-    Top = 32
-    Width = 553
-    Height = 313
-    Lines.Strings = (
-      'Memo1')
+  object ProgressBar1: TProgressBar
+    Left = 24
+    Top = 40
+    Width = 313
+    Height = 25
+    Smooth = True
     TabOrder = 1
-  end
-  object FDQuery1: TFDQuery
-    Left = 312
-    Top = 360
   end
 end

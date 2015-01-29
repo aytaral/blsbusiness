@@ -300,9 +300,6 @@
         BevelOuter = bvNone
         ParentBackground = False
         TabOrder = 0
-        ExplicitLeft = 104
-        ExplicitTop = 128
-        ExplicitHeight = 41
       end
       object dbgKunde: TcxGrid
         Left = 185
@@ -311,10 +308,6 @@
         Height = 423
         Align = alClient
         TabOrder = 1
-        ExplicitLeft = 240
-        ExplicitTop = 88
-        ExplicitWidth = 250
-        ExplicitHeight = 200
         object tvKunde: TcxGridDBTableView
           Navigator.Buttons.CustomButtons = <>
           DataController.Summary.DefaultGroupSummaryItems = <>
@@ -411,6 +404,7 @@
         end
         item
           BeginGroup = True
+          ViewLevels = [ivlSmallIconWithText, ivlSmallIcon]
           Visible = True
           ItemName = 'dxBarButton9'
         end

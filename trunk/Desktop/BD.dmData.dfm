@@ -12,24 +12,25 @@ object dmData: TdmData
       'Server=ds.labit.no,443'
       'DriverID=MSSQL')
     ConnectedStoredUsage = [auDesignTime]
+    Connected = True
     LoginPrompt = False
     BeforeConnect = FDConnBeforeConnect
-    Left = 72
-    Top = 32
+    Left = 64
+    Top = 24
   end
   object FDCmd: TFDCommand
     Connection = FDConn
-    Left = 72
-    Top = 192
+    Left = 64
+    Top = 184
   end
   object FDPhysMSSQLDriverLink: TFDPhysMSSQLDriverLink
-    Left = 72
-    Top = 88
+    Left = 64
+    Top = 80
   end
   object FDGUIxWaitCursor: TFDGUIxWaitCursor
     Provider = 'Forms'
-    Left = 72
-    Top = 136
+    Left = 64
+    Top = 128
   end
   object fdKontakt: TFDQuery
     OnNewRecord = fdKontaktNewRecord
@@ -193,5 +194,34 @@ object dmData: TdmData
     DataSet = fdKontakt
     Left = 192
     Top = 80
+  end
+  object fdFylke: TFDQuery
+    CachedUpdates = True
+    IndexFieldNames = 'Fylkenr'
+    Connection = FDConn
+    SQL.Strings = (
+      'select * '
+      'from Fylke')
+    Left = 616
+    Top = 32
+  end
+  object fdKommune: TFDQuery
+    CachedUpdates = True
+    IndexFieldNames = 'Kommunenr'
+    Connection = FDConn
+    SQL.Strings = (
+      'select *'
+      'from Kommune')
+    Left = 616
+    Top = 80
+  end
+  object fdPostnr: TFDQuery
+    CachedUpdates = True
+    Connection = FDConn
+    SQL.Strings = (
+      'select *'
+      'from Postnr')
+    Left = 616
+    Top = 128
   end
 end

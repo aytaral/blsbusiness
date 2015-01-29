@@ -18,11 +18,10 @@ type
 
   TFylkeListe = IList<TFylke>;
 
-  TFylkeHandler = class(TObject)
+  TFylkeHandler = class(THandler)
     class function LoadFromXMLNode(FylkeNode: PXMLNode;
       const Mapping: TMapList): TFylke;
-    class function SetDatabaseFields(AFylke: TFylke; ADataSet: TDataSet;
-      const Mapping: TMapList): Boolean;
+    class function NewFylkeListe: TFylkeListe;
   end;
 
 implementation
@@ -47,14 +46,9 @@ begin
     Result := AFylke;
 end;
 
-class function TFylkeHandler.SetDatabaseFields(AFylke: TFylke;
-  ADataSet: TDataSet; const Mapping: TMapList): Boolean;
-var
-  Key: String;
+class function TFylkeHandler.NewFylkeListe: TFylkeListe;
 begin
-  for Key in Mapping.Keys do
-    ADataSet.FieldByName(Mapping.Items[Key]).AsVariant :=
-      GetPropValue(AFylke, Key);
+  Result := NewObjectList<TFylke>;
 end;
 
 end.

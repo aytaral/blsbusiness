@@ -22,13 +22,12 @@ type
 
   TKommuneListe = IList<TKommune>;
 
-  TKommuneHandler = class(TObject)
+  TKommuneHandler = class(THandler)
     class function LoadFromXMLNode(KommuneNode: PXMLNode;
       const Mapping: TMapList): TKommune;
-    class function SetDatabaseFields(AKommune: TKommune; ADataSet: TDataSet;
-      const Mapping: TMapList): Boolean;
     class function LinkToFylke(AKommune: TKommune;
       FylkeListe: TFylkeListe): Boolean;
+    class function NewKommuneListe: TKommuneListe;
   end;
 
 
@@ -66,14 +65,9 @@ begin
     Result := AKommune;
 end;
 
-class function TKommuneHandler.SetDatabaseFields(AKommune: TKommune;
-  ADataSet: TDataSet; const Mapping: TMapList): Boolean;
-var
-  Key: String;
+class function TKommuneHandler.NewKommuneListe: TKommuneListe;
 begin
-  for Key in Mapping.Keys do
-    ADataSet.FieldByName(Mapping.Items[Key]).AsVariant :=
-      GetPropValue(AKommune, Key);
+  Result := NewObjectList<TKommune>;
 end;
 
 end.

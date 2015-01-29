@@ -48,6 +48,9 @@ type
     fdKontaktEndretDato: TSQLTimeStampField;
     fdKontaktAktiv: TSmallintField;
     fdKontaktBrukerID: TStringField;
+    fdFylke: TFDQuery;
+    fdKommune: TFDQuery;
+    fdPostnr: TFDQuery;
     procedure FDConnBeforeConnect(Sender: TObject);
     procedure DataModuleCreate(Sender: TObject);
     procedure fdKontaktNewRecord(DataSet: TDataSet);

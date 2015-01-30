@@ -29,26 +29,35 @@ end;
 class procedure THandler.SetDatabaseFields(AObject: TObject;
   ADataSet: TDataSet; const Mapping: TMapList);
 var
-  Key: String;
+  Key, SubKey: String;
+  Obj: TObject;
+  Found: Boolean;
 begin
   //Her bør det støttes notasjon for sub-objecter
-  for Key in Mapping.Keys do
-    ADataSet.FieldByName(Mapping.Items[Key]).AsVariant :=
-      GetPropValue(AObject, Key);
+  for Key in Mapping.Keys do begin
+    if Pos('.', Mapping.Items[Key]) = 0 then
+      ADataSet.FieldByName(Key).AsVariant :=
+        GetPropValue(AObject, Mapping.Items[Key])
+    else begin
+      //Drilldown to sub-object
+      SubKey := Mapping.Items[Key];
+      Obj := AObject;
+      Found := True;
+      while (Pos('.', SubKey) > 0) and (Found) do begin
+        Obj := GetObjectProp(Obj, Copy(SubKey, 1, Pos('.', SubKey) - 1));
+        Delete(SubKey, 1, Pos('.', SubKey));
+        Found := (Obj <> nil);
+      end;
+      if Found then
+        ADataSet.FieldByName(Key).AsVariant := GetPropValue(Obj, SubKey);
+    end;
+  end;
 end;
 
 class procedure THandler.MergeIntoDatabase(AObject: TObject;
   ADataSet: TDataSet; const Mapping: TMapList; KeyField: String);
-var
-  Key, PropName: String;
 begin
-  for Key in Mapping.Keys do
-    if Mapping.Items[Key] = KeyField then begin
-      PropName := Key;
-      Break;
-    end;
-
-  if ADataSet.Locate(KeyField, GetPropValue(AObject, PropName)  , []) then
+  if ADataSet.Locate(KeyField, GetPropValue(AObject, Mapping.Items[KeyField]), []) then
     ADataSet.Edit
   else
     ADataSet.Insert;

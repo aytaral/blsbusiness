@@ -17,7 +17,7 @@ type
 
   TfrmDataSync = class(TForm)
     btnSync: TButton;
-    ProgressBar1: TProgressBar;
+    pbSync: TProgressBar;
     Label1: TLabel;
     lblOperation: TLabel;
     procedure btnSyncClick(Sender: TObject);
@@ -65,8 +65,7 @@ var
 begin
   MyKommune := TKommuneHandler.LoadFromXMLNode(AKommune, Map);
   if MyKommune <> nil then begin
-    //TKommuneHandler.LinkToFylke(MyKommune, FylkeListe);
-    //Ikke i bruk da kommune ikke er linket til fylke pr dd.
+    TKommuneHandler.LinkToFylke(MyKommune, FylkeListe);
     KommuneListe.Add(MyKommune);
   end;
 end;
@@ -74,19 +73,34 @@ end;
 procedure TfrmDataSync.IteratePostnr(APostnr: PXMLNode);
 var
   MyPostnr: TPostnr;
-  KNavn: String;
-  fKommune: TKommune;
+  KNavn, FNavn: String;
+  FKommune: TKommune;
+  KNode: PXMLNode;
 begin
   MyPostnr := TPostnrHandler.LoadFromXMLNode(APostnr, Map);
   if MyPostnr <> nil then begin
-//    KNavn := ''; //APostnr.
-//    KommuneListe.TryGetSingle(FKommune,
-//      function(const AKommune: TKommune): Boolean begin
-//        Result := True;
-//      end
-//    );
-    //KommuneListe.TryGetSingle(MyPostnr)
-    TPostnrHandler.LinkToKommune(MyPostnr, KommuneListe);
+
+    //Linker til kommune
+    if APostnr.SelectNode('primary_municipality', KNode) then begin
+      KNavn := KNode.Text;
+
+      //Henter ut fylke
+      if APostnr.SelectNode('primary_county', KNode) then begin
+        FNavn := KNode.Text;
+
+        if KommuneListe.TryGetSingle(FKommune,
+          function(const AKommune: TKommune): Boolean
+          begin
+            Result := ((AnsiUpperCase(AKommune.Kommune) = KNavn) and
+                       (AnsiUpperCase(AKommune.GetFylkeNavn) = FNavn));
+          end) then
+          MyPostnr.Kommune := FKommune
+        else
+          MyPostnr.Kommune := nil;
+
+      end;
+    end;
+
     PostnrListe.Add(MyPostnr);
   end;
 end;
@@ -95,13 +109,13 @@ procedure TfrmDataSync.SyncFylker;
 var
   MyFylke: TFylke;
 begin
-  //Mapping av XML mot object-properties
+  //Mapping av XML mot object-properties (Dest.Field = Src.Field)
   Map.Clear;
   Map.Add('Fylkenr', 'nummer');
   Map.Add('Fylke', 'navn');
   IterateXml(Settings.DataURL + 'xml/difi/geo/fylke', 'entries', IterateFylke);
 
-  //Mapping av XML mot database
+  //Mapping av XML mot database (Dest.Field = Src.Field)
   Map.Clear;
   Map.Add('Fylkenr', 'Fylkenr');
   Map.Add('Fylke', 'Fylke');
@@ -116,17 +130,19 @@ end;
 procedure TfrmDataSync.SyncKommuner;
 var
   MyKommune: TKommune;
+  I: Integer;
 begin
-  //Mapping av XML mot object-properties
+  //Mapping av XML mot object-properties (Dest.Field = Src.Field)
   Map.Clear;
   Map.Add('Fylkenr', 'fylke');
   Map.Add('Kommune', 'navn');
   Map.Add('Kommunenr', 'kommune');
 
-  IterateXml(Settings.DataURL + 'xml/difi/geo/kommune', 'entries',
-    IterateKommune);
+  for I := 0 to 9 do
+    IterateXml(Settings.DataURL + 'xml/difi/geo/kommune?page=' + IntToStr(I),
+      'entries', IterateKommune);
 
-  //Mapping av XML mot database
+  //Mapping av XML mot database (Dest.Field = Src.Field)
   Map.Clear;
   Map.Add('Kommunenr', 'Kommunenr');
   Map.Add('Kommune', 'Kommune');
@@ -143,7 +159,7 @@ var
   I: Integer;
   MyPostnr: TPostnr;
 begin
-  //Mapping av XML mot object-properties
+  //Mapping av XML mot object-properties (Dest.Field = Src.Field)
   Map.Clear;
   Map.Add('Postnr', 'postal_code');
   Map.Add('Poststed', 'city');
@@ -153,10 +169,12 @@ begin
     IterateXml('http://adressesok.posten.no/api/v1/postal_codes.xml?postal_code=' +
       IntToStr(I) + '*', '', IteratePostnr);
 
-  //Mapping av XML mot database
+  //Mapping av XML mot database (Dest.Field = Src.Field)
   Map.Clear;
   Map.Add('Postnr', 'Postnr');
   Map.Add('Poststed', 'Poststed');
+  Map.Add('Kommunenr', 'Kommune.Kommunenr');
+  Map.Add('LandKode', 'LandKode');
   dmData.fdPostnr.Open;
   for MyPostnr in PostnrListe do begin
     MyPostnr.LandKode := 'NO';
@@ -169,9 +187,22 @@ end;
 
 procedure TfrmDataSync.btnSyncClick(Sender: TObject);
 begin
+  pbSync.State := pbsNormal;
+  pbSync.Update;
+
+  lblOperation.Caption := 'Behandler fylker ...';
+  lblOperation.Update;
   SyncFylker;
+
+  lblOperation.Caption := 'Behandler kommuner ...';
+  lblOperation.Update;
   SyncKommuner;
+
+  lblOperation.Caption := 'Behandler postnummer ...';
+  lblOperation.Update;
   SyncPostnr;
+
+  pbSync.State := pbsPaused;
 
   //IterateXml(Settings.DataURL + 'xml/brreg/organisasjonsform', 'entries', IterateFylker);
   //IterateXml(Settings.DataURL + 'xml/brreg/sektorkode', 'entries', IterateFylker);

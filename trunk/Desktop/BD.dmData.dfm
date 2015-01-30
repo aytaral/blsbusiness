@@ -29,6 +29,7 @@ object dmData: TdmData
   end
   object FDGUIxWaitCursor: TFDGUIxWaitCursor
     Provider = 'Forms'
+    ScreenCursor = gcrHourGlass
     Left = 64
     Top = 128
   end

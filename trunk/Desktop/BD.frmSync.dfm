@@ -46,12 +46,14 @@ object frmDataSync: TfrmDataSync
     TabOrder = 0
     OnClick = btnSyncClick
   end
-  object ProgressBar1: TProgressBar
+  object pbSync: TProgressBar
     Left = 24
     Top = 40
     Width = 313
     Height = 25
-    Smooth = True
+    Enabled = False
+    Style = pbstMarquee
+    State = pbsPaused
     TabOrder = 1
   end
 end

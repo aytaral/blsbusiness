@@ -13,6 +13,8 @@ type
     FKommune: String;
     FFylkenr: String;
     FFylke: TFylke;
+  public
+    function GetFylkeNavn: String;
   published
     property Kommunenr: String read FKommunenr write FKommunenr;
     property Kommune: String read FKommune write FKommune;
@@ -68,6 +70,15 @@ end;
 class function TKommuneHandler.NewKommuneListe: TKommuneListe;
 begin
   Result := NewObjectList<TKommune>;
+end;
+
+{ TKommune }
+
+function TKommune.GetFylkeNavn: String;
+begin
+  Result := '';
+  if Fylke <> nil then
+    Result := Fylke.Fylke;
 end;
 
 end.

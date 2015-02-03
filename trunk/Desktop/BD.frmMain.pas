@@ -14,7 +14,10 @@ uses
   dxRibbonGallery, dxRibbonBackstageView, dxRibbonForm, Vcl.ImgList,
   dxSkinsCore, dxSkinOffice2010Black, dxSkinscxPCPainter,
   dxSkinsdxRibbonPainter, dxSkinsdxBarPainter, dxSkinsForm, cxPCdxBarPopupMenu,
-  cxPC, System.Actions, Vcl.ActnList, Vcl.ExtCtrls;
+  cxPC, System.Actions, Vcl.ActnList, Vcl.ExtCtrls, dxSkinsdxNavBarPainter,
+  dxNavBarCollns, dxNavBarBase, dxNavBar, JvAppStorage, JvAppRegistryStorage,
+  JvComponentBase, JvFormPlacement, cxContainer, cxGroupBox, cxCheckGroup,
+  cxSplitter, dxSkinOffice2010Blue, Vcl.AppEvnts;
 
 type
   TfrmMainform = class(TdxRibbonForm)
@@ -87,13 +90,46 @@ type
     dxBarButton9: TdxBarButton;
     acDelete: TAction;
     dxBarButton10: TdxBarButton;
-    procedure acSalgExecute(Sender: TObject);
-    procedure acKontaktExecute(Sender: TObject);
-    procedure acProduktExecute(Sender: TObject);
-    procedure acRegnskapExecute(Sender: TObject);
+    JvFormStorage: TJvFormStorage;
+    JvAppRegistryStorage: TJvAppRegistryStorage;
+    splKunde: TcxSplitter;
+    cxGroupBox1: TcxGroupBox;
+    cbKundeInaktive: TCheckBox;
+    ApplicationEvents: TApplicationEvents;
+    tvKundeKlientID: TcxGridDBColumn;
+    tvKundeKontaktnr: TcxGridDBColumn;
+    tvKundeNavn: TcxGridDBColumn;
+    tvKundePostAdr1: TcxGridDBColumn;
+    tvKundePostAdr2: TcxGridDBColumn;
+    tvKundePostnr: TcxGridDBColumn;
+    tvKundeLandKode: TcxGridDBColumn;
+    tvKundeOrgnr: TcxGridDBColumn;
+    tvKundeTelefon: TcxGridDBColumn;
+    tvKundeFaks: TcxGridDBColumn;
+    tvKundeMobil: TcxGridDBColumn;
+    tvKundeEpost: TcxGridDBColumn;
+    tvKundeWeb: TcxGridDBColumn;
+    tvKundeBankkonto: TcxGridDBColumn;
+    tvKundeKontakt: TcxGridDBColumn;
+    tvKundeForfallsdager: TcxGridDBColumn;
+    tvKundeKreditt: TcxGridDBColumn;
+    tvKundeRabatt: TcxGridDBColumn;
+    tvKundeKontaktTypeID: TcxGridDBColumn;
+    tvKundeAktiv: TcxGridDBColumn;
+    tvKundeRegDato: TcxGridDBColumn;
+    tvKundeEndretDato: TcxGridDBColumn;
+    Panel1: TPanel;
+    cxGroupBox2: TcxGroupBox;
+    CheckBox1: TCheckBox;
+    cxSplitter1: TcxSplitter;
+    dbgLeverandor: TcxGrid;
+    cxGridDBTableView1: TcxGridDBTableView;
+    cxGridLevel1: TcxGridLevel;
     procedure acExitExecute(Sender: TObject);
     procedure acSyncDataExecute(Sender: TObject);
+    procedure acSalgExecute(Sender: TObject);
   private
+    procedure ShowTabs(GroupIndex: Integer);
     { Private declarations }
   public
     { Public declarations }
@@ -104,13 +140,19 @@ var
 
 implementation
 
-uses BD.dmData, BD.Settings, BD.frmSync;
+uses BD.dmData, BD.dmMain, BD.Settings, BD.frmSync;
 
 {$R *.dfm}
 
 procedure TfrmMainform.acExitExecute(Sender: TObject);
 begin
   Close;
+end;
+
+procedure TfrmMainform.acSalgExecute(Sender: TObject);
+begin
+  with Sender as TAction do
+    ShowTabs(TAction(Sender).Tag);
 end;
 
 procedure TfrmMainform.acSyncDataExecute(Sender: TObject);
@@ -120,27 +162,19 @@ begin
   frmDataSync.Release;
 end;
 
-procedure TfrmMainform.acSalgExecute(Sender: TObject);
+procedure TfrmMainform.ShowTabs(GroupIndex: Integer);
+var
+  Page: TcxTabSheet;
+  I: Integer;
 begin
-  //
+  for I := 0 to pcPages.PageCount -1 do
+    pcPages.Pages[I].TabVisible := (pcPages.Pages[I].Tag = GroupIndex);
+
+  if pcPages.Pages[0].TabVisible then
+    pcPages.ActivePage := pcPages.Pages[0]
+  else
+    pcPages.ActivePage := pcPages.FindNextPage(pcPages.Pages[0], True, True);
 end;
 
-procedure TfrmMainform.acKontaktExecute(Sender: TObject);
-begin
-  //
-
-end;
-
-procedure TfrmMainform.acProduktExecute(Sender: TObject);
-begin
-  //
-
-end;
-
-procedure TfrmMainform.acRegnskapExecute(Sender: TObject);
-begin
-  //
-
-end;
 
 end.

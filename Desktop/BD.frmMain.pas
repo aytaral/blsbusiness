@@ -164,7 +164,6 @@ end;
 
 procedure TfrmMainform.ShowTabs(GroupIndex: Integer);
 var
-  Page: TcxTabSheet;
   I: Integer;
 begin
   for I := 0 to pcPages.PageCount -1 do

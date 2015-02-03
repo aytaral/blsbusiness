@@ -2,7 +2,7 @@ unit BD.Utils;
 
 interface
 
-uses System.Classes, Generics.Collections, OXmlPDOM, Data.DB,
+uses System.Classes, System.Generics.Defaults, Generics.Collections, OXmlPDOM, Data.DB,
   Spring.Collections, System.TypInfo;
 
 type
@@ -10,12 +10,12 @@ type
 
   THandler = class(TObject)
     class function NewObjectList<T: class>: IList<T>;
-    class procedure SetDatabaseFields(AObject: TObject;
-      ADataSet: TDataSet; const Mapping: TMapList); static;
+    class procedure SetDatabaseFields(AObject: TObject; ADataSet: TDataSet;
+      const Mapping: TMapList); static;
     class procedure MergeIntoDatabase(AObject: TObject; ADataSet: TDataSet;
       const Mapping: TMapList; KeyField: String); static;
+    class function LoadFromXML<T: class>(ANode: PXMLNode; const Mapping: TMapList): T;
   end;
-
 
 implementation
 
@@ -26,20 +26,20 @@ begin
   Result := TCollections.CreateObjectList<T>;
 end;
 
-class procedure THandler.SetDatabaseFields(AObject: TObject;
-  ADataSet: TDataSet; const Mapping: TMapList);
+class procedure THandler.SetDatabaseFields(AObject: TObject; ADataSet: TDataSet;
+  const Mapping: TMapList);
 var
   Key, SubKey: String;
   Obj: TObject;
   Found: Boolean;
 begin
-  //Her bør det støttes notasjon for sub-objecter
+  // Her bør det støttes notasjon for sub-objecter
   for Key in Mapping.Keys do begin
     if Pos('.', Mapping.Items[Key]) = 0 then
       ADataSet.FieldByName(Key).AsVariant :=
         GetPropValue(AObject, Mapping.Items[Key])
     else begin
-      //Drilldown to sub-object
+      // Drilldown to sub-object
       SubKey := Mapping.Items[Key];
       Obj := AObject;
       Found := True;
@@ -54,15 +54,27 @@ begin
   end;
 end;
 
-class procedure THandler.MergeIntoDatabase(AObject: TObject;
-  ADataSet: TDataSet; const Mapping: TMapList; KeyField: String);
+class function THandler.LoadFromXML<T>(ANode: PXMLNode;
+  const Mapping: TMapList): T;
+var
+  Obj: T;
 begin
-  if ADataSet.Locate(KeyField, GetPropValue(AObject, Mapping.Items[KeyField]), []) then
+  Result := nil;
+
+//  Obj :=
+
+
+end;
+
+class procedure THandler.MergeIntoDatabase(AObject: TObject; ADataSet: TDataSet;
+  const Mapping: TMapList; KeyField: String);
+begin
+  if ADataSet.Locate(KeyField, GetPropValue(AObject, Mapping.Items[KeyField]),
+    []) then
     ADataSet.Edit
   else
     ADataSet.Insert;
-
-  SetDataBaseFields(AObject, ADataSet, Mapping);
+  SetDatabaseFields(AObject, ADataSet, Mapping);
   ADataSet.Post;
 end;
 

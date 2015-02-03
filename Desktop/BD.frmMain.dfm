@@ -216,13 +216,13 @@
     Properties.ActivePage = tsKunde
     Properties.CustomButtons.Buttons = <>
     LookAndFeel.NativeStyle = False
-    ExplicitTop = 127
-    ExplicitHeight = 489
+    ExplicitTop = 166
     ClientRectBottom = 450
     ClientRectLeft = 2
     ClientRectRight = 931
     ClientRectTop = 27
     object tsAbonnement: TcxTabSheet
+      Tag = 1
       Caption = 'Abonnement'
       ImageIndex = 0
       ExplicitHeight = 456
@@ -277,65 +277,268 @@
       end
     end
     object tsOrdre: TcxTabSheet
+      Tag = 1
       Caption = 'Ordre'
       ImageIndex = 1
     end
     object tsFaktura: TcxTabSheet
+      Tag = 1
       Caption = 'Faktura'
       ImageIndex = 2
     end
     object tsPurring: TcxTabSheet
+      Tag = 1
       Caption = 'Purring'
       ImageIndex = 3
     end
     object tsKunde: TcxTabSheet
+      Tag = 2
+      BorderWidth = 4
       Caption = 'Kunde'
       ImageIndex = 4
       object pnlKunde: TPanel
         Left = 0
         Top = 0
-        Width = 185
-        Height = 423
+        Width = 180
+        Height = 415
         Align = alLeft
         BevelOuter = bvNone
-        ParentBackground = False
         TabOrder = 0
+        ExplicitTop = -3
+        object cxGroupBox1: TcxGroupBox
+          Left = 0
+          Top = 0
+          Align = alTop
+          Caption = 'Filter'
+          TabOrder = 0
+          Height = 65
+          Width = 180
+          object cbKundeInaktive: TCheckBox
+            Left = 16
+            Top = 24
+            Width = 145
+            Height = 17
+            Caption = 'Vis inaktive kunder'
+            TabOrder = 0
+          end
+        end
       end
       object dbgKunde: TcxGrid
-        Left = 185
+        Left = 186
         Top = 0
-        Width = 744
-        Height = 423
+        Width = 735
+        Height = 415
         Align = alClient
         TabOrder = 1
+        ExplicitLeft = 191
+        ExplicitWidth = 738
+        ExplicitHeight = 423
         object tvKunde: TcxGridDBTableView
           Navigator.Buttons.CustomButtons = <>
+          DataController.DataSource = dmMain.dsKunde
           DataController.Summary.DefaultGroupSummaryItems = <>
           DataController.Summary.FooterSummaryItems = <>
           DataController.Summary.SummaryGroups = <>
+          OptionsCustomize.ColumnsQuickCustomization = True
+          OptionsData.CancelOnExit = False
+          OptionsData.Deleting = False
+          OptionsData.DeletingConfirmation = False
+          OptionsData.Editing = False
+          OptionsData.Inserting = False
+          OptionsSelection.CellSelect = False
+          OptionsView.CellEndEllipsis = True
+          OptionsView.NoDataToDisplayInfoText = ' '
+          OptionsView.ColumnAutoWidth = True
+          OptionsView.GroupByBox = False
+          OptionsView.Indicator = True
+          object tvKundeKlientID: TcxGridDBColumn
+            DataBinding.FieldName = 'KlientID'
+            Visible = False
+            VisibleForCustomization = False
+          end
+          object tvKundeKontaktnr: TcxGridDBColumn
+            DataBinding.FieldName = 'Kontaktnr'
+          end
+          object tvKundeNavn: TcxGridDBColumn
+            DataBinding.FieldName = 'Navn'
+            Width = 172
+          end
+          object tvKundePostAdr1: TcxGridDBColumn
+            DataBinding.FieldName = 'PostAdr1'
+            Width = 137
+          end
+          object tvKundePostAdr2: TcxGridDBColumn
+            DataBinding.FieldName = 'PostAdr2'
+            Width = 136
+          end
+          object tvKundePostnr: TcxGridDBColumn
+            DataBinding.FieldName = 'Postnr'
+          end
+          object tvKundeLandKode: TcxGridDBColumn
+            DataBinding.FieldName = 'LandKode'
+            Width = 81
+          end
+          object tvKundeOrgnr: TcxGridDBColumn
+            DataBinding.FieldName = 'Orgnr'
+          end
+          object tvKundeTelefon: TcxGridDBColumn
+            DataBinding.FieldName = 'Telefon'
+          end
+          object tvKundeFaks: TcxGridDBColumn
+            DataBinding.FieldName = 'Faks'
+          end
+          object tvKundeMobil: TcxGridDBColumn
+            DataBinding.FieldName = 'Mobil'
+          end
+          object tvKundeEpost: TcxGridDBColumn
+            DataBinding.FieldName = 'Epost'
+          end
+          object tvKundeWeb: TcxGridDBColumn
+            DataBinding.FieldName = 'Web'
+          end
+          object tvKundeBankkonto: TcxGridDBColumn
+            DataBinding.FieldName = 'Bankkonto'
+          end
+          object tvKundeKontakt: TcxGridDBColumn
+            DataBinding.FieldName = 'Kontakt'
+          end
+          object tvKundeForfallsdager: TcxGridDBColumn
+            DataBinding.FieldName = 'Forfallsdager'
+          end
+          object tvKundeKreditt: TcxGridDBColumn
+            DataBinding.FieldName = 'Kreditt'
+          end
+          object tvKundeRabatt: TcxGridDBColumn
+            DataBinding.FieldName = 'Rabatt'
+          end
+          object tvKundeKontaktTypeID: TcxGridDBColumn
+            DataBinding.FieldName = 'KontaktTypeID'
+          end
+          object tvKundeAktiv: TcxGridDBColumn
+            DataBinding.FieldName = 'Aktiv'
+          end
+          object tvKundeRegDato: TcxGridDBColumn
+            DataBinding.FieldName = 'RegDato'
+            Visible = False
+          end
+          object tvKundeEndretDato: TcxGridDBColumn
+            DataBinding.FieldName = 'EndretDato'
+            Visible = False
+          end
         end
         object dbgKundeLevel: TcxGridLevel
           GridView = tvKunde
         end
       end
+      object splKunde: TcxSplitter
+        Left = 180
+        Top = 0
+        Width = 6
+        Height = 415
+        AutoSnap = True
+        MinSize = 50
+        Control = pnlKunde
+        Color = clBtnFace
+        ParentColor = False
+        ExplicitLeft = 185
+        ExplicitHeight = 423
+      end
     end
     object tsLeverandør: TcxTabSheet
+      Tag = 2
+      BorderWidth = 4
       Caption = 'Leverand'#248'r'
       ImageIndex = 5
+      object Panel1: TPanel
+        Left = 0
+        Top = 0
+        Width = 180
+        Height = 415
+        Align = alLeft
+        BevelOuter = bvNone
+        TabOrder = 0
+        ExplicitLeft = 8
+        ExplicitHeight = 423
+        object cxGroupBox2: TcxGroupBox
+          Left = 0
+          Top = 0
+          Align = alTop
+          Caption = 'Filter'
+          TabOrder = 0
+          Height = 65
+          Width = 180
+          object CheckBox1: TCheckBox
+            Left = 16
+            Top = 24
+            Width = 145
+            Height = 17
+            Caption = 'Vis inaktive leverand'#248'rer'
+            TabOrder = 0
+          end
+        end
+      end
+      object cxSplitter1: TcxSplitter
+        Left = 180
+        Top = 0
+        Width = 6
+        Height = 415
+        AutoSnap = True
+        MinSize = 50
+        Control = Panel1
+        Color = clBtnFace
+        ParentColor = False
+        ExplicitLeft = 188
+        ExplicitHeight = 423
+      end
+      object dbgLeverandor: TcxGrid
+        Left = 186
+        Top = 0
+        Width = 735
+        Height = 415
+        Align = alClient
+        TabOrder = 2
+        ExplicitLeft = 191
+        ExplicitWidth = 738
+        ExplicitHeight = 423
+        object cxGridDBTableView1: TcxGridDBTableView
+          Navigator.Buttons.CustomButtons = <>
+          DataController.DataSource = dmMain.dsKunde
+          DataController.Summary.DefaultGroupSummaryItems = <>
+          DataController.Summary.FooterSummaryItems = <>
+          DataController.Summary.SummaryGroups = <>
+          OptionsCustomize.ColumnsQuickCustomization = True
+          OptionsData.CancelOnExit = False
+          OptionsData.Deleting = False
+          OptionsData.DeletingConfirmation = False
+          OptionsData.Editing = False
+          OptionsData.Inserting = False
+          OptionsSelection.CellSelect = False
+          OptionsView.NoDataToDisplayInfoText = ' '
+          OptionsView.GroupByBox = False
+          OptionsView.Indicator = True
+        end
+        object cxGridLevel1: TcxGridLevel
+          GridView = cxGridDBTableView1
+        end
+      end
     end
     object tsPerson: TcxTabSheet
+      Tag = 2
       Caption = 'Person'
       ImageIndex = 6
     end
     object tsProdukt: TcxTabSheet
+      Tag = 3
       Caption = 'Produkt'
       ImageIndex = 7
     end
     object tsBilag: TcxTabSheet
+      Tag = 4
       Caption = 'Bilag'
       ImageIndex = 8
     end
     object tsKonto: TcxTabSheet
+      Tag = 4
       Caption = 'Konto'
       ImageIndex = 9
     end
@@ -373,6 +576,7 @@
       FloatTop = 8
       FloatClientWidth = 51
       FloatClientHeight = 24
+      Images = ilSmall
       ItemLinks = <
         item
           Visible = True
@@ -496,10 +700,9 @@
       Visible = ivAlways
     end
     object dxBarButton4: TdxBarButton
-      Caption = 'New Button'
+      Action = acNew
       Category = 0
-      Hint = 'New Button'
-      Visible = ivAlways
+      ImageIndex = 3
     end
     object dxBarButton5: TdxBarButton
       Caption = 'New Button'
@@ -598,6 +801,8 @@
     object dxBarLargeButton7: TdxBarLargeButton
       Action = acNew
       Category = 0
+      SyncImageIndex = False
+      ImageIndex = 3
     end
     object dxBarButton9: TdxBarButton
       Action = acEdit
@@ -1425,28 +1630,32 @@
     Left = 784
     Top = 8
     object acSalg: TAction
+      Tag = 1
       AutoCheck = True
       Caption = 'Salg'
       ImageIndex = 0
       OnExecute = acSalgExecute
     end
     object acKontakt: TAction
+      Tag = 2
       AutoCheck = True
       Caption = 'Kontakt'
       ImageIndex = 1
-      OnExecute = acKontaktExecute
+      OnExecute = acSalgExecute
     end
     object acProdukt: TAction
+      Tag = 3
       AutoCheck = True
       Caption = 'Produkt'
       ImageIndex = 2
-      OnExecute = acProduktExecute
+      OnExecute = acSalgExecute
     end
     object acRegnskap: TAction
+      Tag = 4
       AutoCheck = True
       Caption = 'Regnskap'
       ImageIndex = 3
-      OnExecute = acRegnskapExecute
+      OnExecute = acSalgExecute
     end
     object acSyncData: TAction
       Caption = 'Synkroniser'
@@ -1558,6 +1767,106 @@
           0001000000030000000500000004000000010000000000000000000000000000
           0000000000000000000000000000000000000000000000000000000000000000
           0000000000000000000000000000000000000000000000000000}
+      end
+      item
+        Image.Data = {
+          36040000424D3604000000000000360000002800000010000000100000000100
+          2000000000000004000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          00000000000000000000000000030000000B00000013000000190000001A0000
+          00140000000B0000000300000000000000000000000000000000000000000000
+          000000000000000000060402011C4827118B7C431ED2A65927FFA55927FF7E44
+          1ED442230F7B0100000F0000000E000000070000000000000000000000000000
+          000000000005120A05348A4F26DDC58A53FFDCB37CFFEFD298FFEFD198FFB676
+          43FF2E1A0C62100904398F5127E10E05013A0000000600000000000000000000
+          0002040201198D552BDCD1A169FFF1D6A5FFCE9E6EFFC08656FFBD8251FF613A
+          1DA6000000227D4B26CBE2B97BFF5F290FCF0101001900000003000000000000
+          00074C2F1B82C99765FFECD2A3FFB98154FB5238238A120C07300F0A06270201
+          01194C2F1B88CE9D66FFF6DC9BFFBA8657FF3F1C0C910000000D000000000000
+          000A8C5B36D0E3C598FFCB9D75FF573B258C0000000C00000003000000062014
+          0C43BD875AFBF8E5BCFFF8DFA5FFF7E4BAFFA16540FC1C0E074C000000080000
+          0014B37A4BFAF5E6BDFFBC8356FF0D0704300000000C00000003000000079666
+          3FD5B87D4DFFBB8153FFF2D9A1FFB87D4DFFB87C4DFF9C6941DE845331D3A263
+          3BFFBB8557FFF6E7BFFFBF8B5EFFA06238FF87522FDC00000006000000020000
+          000B0D08042FA1653CFFF4DEAEFFB68155FA000000180000000A1F170F34C79D
+          75FBFBF5DCFFFCF3CCFFFAF4DAFFB3855FFB21150C4100000004000000020000
+          0009492C1886BA8B5EFFE7CEA7FF926B48CB0000000900000000000000045540
+          2D77DDC1A2FFFDF7D9FFD4B598FF5037227F0202010C0D08041F110A05274B2D
+          1986A1683EFAF3E4C3FFD8B692FF533F2C780000000400000000000000000000
+          00058F6F50BCEFE1CDFF886343C20202010D58382091A3693CFFA66F43FFBE94
+          6DFFF4E9D1FFE3CAADFFA47E5BD60504030E0000000100000000000000000000
+          0001130F0B1DAB8863DA18130E242C1E1248B78B63FDF8F3E2FFF9F3E4FFEDDE
+          C7FFDCC1A1FFA3815ED215110C22000000020000000000000000000000000000
+          000000000001000000010101000342301E629A7B5CC2C6A078F9C6A078F9997B
+          5DC3564634710504030A00000001000000000000000000000000000000000000
+          0000000000000000000000000000000000010000000200000002000000020000
+          0002000000010000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000}
+      end
+      item
+        Image.Data = {
+          36040000424D3604000000000000360000002800000010000000100000000100
+          2000000000000004000000000000000000000000000000000000000000000000
+          00020000000A0000000F00000011000000110000001200000012000000130000
+          00130000001300000014000000130000000D0000000300000000000000000000
+          000981594BC1B37B67FFB27B66FFB27A66FFB27864FFB17965FFB17965FFB177
+          65FFB17763FFB07664FFB07664FF7E5548C50000000C00000000000000000000
+          000DB57D6BFFFDFBF9FFFBF6F2FFFBF5F2FFFAF5F1FFFBF4EFFFF9F3EEFFF9F2
+          EEFFFAF2ECFFF8F0EBFFF9F0EAFFB17866FF0000001200000000000000000000
+          000DB7816DFFFDFBFAFFF7EEE7FFF8EDE7FFF7EDE7FFF7EDE6FFF6ECE5FFF6EC
+          E5FFF8EBE4FFF6EBE4FFF9F1ECFFB37A68FF0000001300000000000000000000
+          000DB98472FFFDFCFBFFF8EFE8FFF7EEE8FFF7EEE8FFF8EEE7FFF7EEE7FFF7EC
+          E6FFF7ECE5FFF6ECE5FFFAF2EEFFB57D6BFF0000001200000000000000000000
+          000CBB8775FFFEFCFBFFF9F0EAFFF8F0EAFFF8EFE9FFF8EFE8FFF8EEE9FFF8EE
+          E7FFF8EEE7FFF8EDE7FFFAF4EFFFB7816EFF0000001100000000000000000000
+          000BBE8A79FFFEFDFCFFF9F2EDFFF9F2EDFFF9F0EBFFF9F0EAFFF8F0EAFFF8F0
+          E9FFF8EFE9FFF8EFE8FFFAF5F1FFBA8571FF0000001000000000000000000000
+          000AC08F7EFFFEFDFDFFFAF3EFFFFAF4EEFFFAF3EEFFFAF1ECFFF9F1EBFFF9F0
+          EBFFF9F1EBFFF8F0EAFFFBF6F3FFBB8975FF0000000F00000000000000000000
+          0009C49380FFFEFEFDFFFBF5F1FFFBF5F0FFFBF4F0FFFAF3EFFFFAF3EFFFF9F3
+          EDFFF9F2EDFFF9F1EBFFFCF7F4FFBE8B79FF0000000F00000000000000000000
+          0009C69686FFFEFEFDFFFAF5F3FFFBF6F2FFFBF5F1FFFBF5F0FFFBF5F0FFFAF4
+          EFFFFAF4EEFFFAF3EFFFFDF9F7FFC18E7DFF0000000E00000000000000000000
+          0008C99B8AFFFEFEFEFFFBF6F4FFFBF6F4FFFCF6F3FFFCF6F3FFFCF4F2FFFBF5
+          F1FFFBF5F0FFFAF5F0FFFDFAF8FFC39382FF0000000D00000000000000000000
+          0007C99E8DFFFFFEFEFFFCF8F6FFFCF7F5FFFCF7F5FFFBF6F4FFFBF6F4FFFCF6
+          F3FFFCF6F2FFFBF6F1FFFDFBF9FFC69786FF0000000C00000000000000000000
+          0006CEA190FFFFFFFEFFFDF9F7FFFDF9F7FFFCF8F7FFFCF8F6FFFCF7F5FFFBF7
+          F5FFFBF7F4FFFCF7F3FFFDFCFAFFC89B8AFF0000000B00000000000000000000
+          0006CEA393FFFFFFFFFFFDFAF9FFFDFAF8FFFDFAF8FFFDF9F7FFFCF8F7FFFBF8
+          F6FFFBF7F6FFFCF7F5FFFEFCFCFFCB9D8DFF0000000B00000000000000000000
+          0005D0A696FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFEFEFFFEFEFEFFFFFE
+          FEFFFEFEFEFFFEFEFEFFFEFEFDFFCDA191FF0000000900000000000000000000
+          00039C7C71C0D2A898FFD1A897FFD1A897FFD1A797FFD0A696FFD0A696FFD0A6
+          95FFD0A595FFCFA595FFCFA494FF98796EC20000000600000000}
       end>
+  end
+  object JvFormStorage: TJvFormStorage
+    AppStorage = JvAppRegistryStorage
+    AppStoragePath = 'Business\'
+    StoredProps.Strings = (
+      'pnlKunde.Width'
+      'acSalg.Checked'
+      'acKontakt.Checked'
+      'acProdukt.Checked'
+      'acRegnskap.Checked')
+    StoredValues = <>
+    Left = 656
+    Top = 8
+  end
+  object JvAppRegistryStorage: TJvAppRegistryStorage
+    StorageOptions.BooleanStringTrueValues = 'TRUE, YES, Y'
+    StorageOptions.BooleanStringFalseValues = 'FALSE, NO, N'
+    StorageOptions.BooleanAsString = False
+    Root = 'Software\BLS'
+    SubStorages = <>
+    Left = 688
+    Top = 8
+  end
+  object ApplicationEvents: TApplicationEvents
+    Left = 616
+    Top = 8
   end
 end

@@ -88,6 +88,7 @@ begin
       if APostnr.SelectNode('primary_county', KNode) then begin
         FNavn := KNode.Text;
 
+        { TODO : Støtte kommuner som også er skrevet på samisk (Navn kun en del av stringen) }
         if KommuneListe.TryGetSingle(FKommune,
           function(const AKommune: TKommune): Boolean
           begin

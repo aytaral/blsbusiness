@@ -14,7 +14,7 @@ type
       const Mapping: TMapList); static;
     class procedure MergeIntoDatabase(AObject: TObject; ADataSet: TDataSet;
       const Mapping: TMapList; KeyField: String); static;
-    class function LoadFromXML<T: class>(ANode: PXMLNode; const Mapping: TMapList): T;
+    class function LoadFromXML<T: class, constructor>(ANode: PXMLNode; const Mapping: TMapList): T;
   end;
 
 implementation
@@ -33,7 +33,7 @@ var
   Obj: TObject;
   Found: Boolean;
 begin
-  // Her bør det støttes notasjon for sub-objecter
+  // Notasjon for å støtte sub-objecter
   for Key in Mapping.Keys do begin
     if Pos('.', Mapping.Items[Key]) = 0 then
       ADataSet.FieldByName(Key).AsVariant :=
@@ -58,12 +58,25 @@ class function THandler.LoadFromXML<T>(ANode: PXMLNode;
   const Mapping: TMapList): T;
 var
   Obj: T;
+  TmpNode: PXMLNode;
+  Sub, Key: String;
 begin
   Result := nil;
-
-//  Obj :=
-
-
+  Obj := T.Create;
+  // Notasjon for å støtte attributter
+  for Key in Mapping.Keys do
+    if Pos('.', Mapping.Items[Key]) = 0 then begin
+      if ANode.SelectNode(Mapping.Items[Key], TmpNode) then
+        SetPropValue(Obj, Key, TmpNode.Text);
+    end
+    else begin
+      Sub := Mapping.Items[Key];
+      if ANode.SelectNode(Copy(Sub, 1, Pos('.', Sub) -1), TmpNode) then begin
+        Delete(Sub, 1, Pos('.', Sub));
+        SetPropValue(Obj, Key, TmpNode.Attributes[Sub]);
+      end;
+    end;
+  Result := Obj;
 end;
 
 class procedure THandler.MergeIntoDatabase(AObject: TObject; ADataSet: TDataSet;

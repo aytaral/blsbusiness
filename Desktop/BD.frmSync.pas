@@ -54,7 +54,8 @@ procedure TfrmDataSync.IterateFylke(AFylke: PXMLNode);
 var
   MyFylke: TFylke;
 begin
-  MyFylke := TFylkeHandler.LoadFromXMLNode(AFylke, Map);
+  //MyFylke := TFylkeHandler.LoadFromXMLNode(AFylke, Map);
+  MyFylke := TFylkeHandler.Load(AFylke, Map);
   if MyFylke <> nil then
     FylkeListe.Add(MyFylke);
 end;

@@ -3,7 +3,7 @@ unit BD.Kommune;
 interface
 
 uses System.SysUtils, System.Classes, Data.DB, OXmlPDOM, BD.Fylke,
-  Generics.Collections, System.TypInfo, BD.Utils, Spring.Collections;
+  Generics.Collections, System.TypInfo, BD.Handler, Spring.Collections;
 
 type
 

@@ -10,7 +10,7 @@ uses
   FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
   FireDAC.Stan.Async, FireDAC.DApt, Data.DB, FireDAC.Comp.DataSet,
-  FireDAC.Comp.Client, BD.Fylke, BD.Kommune, BD.Postnr, BD.Utils, Vcl.ComCtrls;
+  FireDAC.Comp.Client, BD.Fylke, BD.Kommune, BD.Postnr, BD.Handler, Vcl.ComCtrls;
 
 type
   TIterator = procedure (ANode: PXMLNode) of Object;

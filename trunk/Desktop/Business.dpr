@@ -8,7 +8,7 @@ uses
   BD.Settings in 'BD.Settings.pas',
   BD.frmSync in 'BD.frmSync.pas' {frmDataSync},
   BD.Fylke in 'BD.Fylke.pas',
-  BD.Utils in 'BD.Utils.pas',
+  BD.Handler in 'BD.Handler.pas',
   BD.dmMain in 'BD.dmMain.pas' {dmMain: TDataModule},
   BD.Kommune in 'BD.Kommune.pas',
   BD.Postnr in 'BD.Postnr.pas';

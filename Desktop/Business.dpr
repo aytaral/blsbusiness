@@ -11,7 +11,9 @@ uses
   BD.Handler in 'BD.Handler.pas',
   BD.dmMain in 'BD.dmMain.pas' {dmMain: TDataModule},
   BD.Kommune in 'BD.Kommune.pas',
-  BD.Postnr in 'BD.Postnr.pas';
+  BD.Postnr in 'BD.Postnr.pas',
+  BD.Kunde in 'BD.Kunde.pas' {frmKunde},
+  BD.Vars in 'BD.Vars.pas';
 
 {$R *.res}
 

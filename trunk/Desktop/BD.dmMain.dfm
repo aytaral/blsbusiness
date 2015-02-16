@@ -3,16 +3,18 @@ object dmMain: TdmMain
   Height = 527
   Width = 843
   object fqKunde: TFDQuery
-    Active = True
     BeforeOpen = fqKundeBeforeOpen
     Connection = dmData.FDConn
     SQL.Strings = (
-      'select * '
-      'from Kontakt'
-      'where KlientID = :KlientID'
-      'and SerieID = '#39'KS'#39)
-    Left = 32
-    Top = 24
+      'select '
+      '  * '
+      'from '
+      '  Kontakt'
+      'where '
+      '  KlientID = :KlientID'
+      '  and SerieID = '#39'KS'#39)
+    Left = 40
+    Top = 32
     ParamData = <
       item
         Name = 'KLIENTID'
@@ -23,7 +25,7 @@ object dmMain: TdmMain
   end
   object dsKunde: TDataSource
     DataSet = fqKunde
-    Left = 32
-    Top = 72
+    Left = 40
+    Top = 80
   end
 end

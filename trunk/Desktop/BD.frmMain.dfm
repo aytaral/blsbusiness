@@ -281,28 +281,16 @@
       Tag = 1
       Caption = 'Ordre'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
     end
     object tsFaktura: TcxTabSheet
       Tag = 1
       Caption = 'Faktura'
       ImageIndex = 2
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
     end
     object tsPurring: TcxTabSheet
       Tag = 1
       Caption = 'Purring'
       ImageIndex = 3
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
     end
     object tsKunde: TcxTabSheet
       Tag = 2
@@ -456,10 +444,6 @@
       BorderWidth = 4
       Caption = 'Leverand'#248'r'
       ImageIndex = 5
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Panel1: TPanel
         Left = 0
         Top = 0
@@ -468,8 +452,6 @@
         Align = alLeft
         BevelOuter = bvNone
         TabOrder = 0
-        ExplicitLeft = 8
-        ExplicitHeight = 423
         object cxGroupBox2: TcxGroupBox
           Left = 0
           Top = 0
@@ -498,8 +480,6 @@
         Control = Panel1
         Color = clBtnFace
         ParentColor = False
-        ExplicitLeft = 188
-        ExplicitHeight = 423
       end
       object dbgLeverandor: TcxGrid
         Left = 186
@@ -508,9 +488,6 @@
         Height = 415
         Align = alClient
         TabOrder = 2
-        ExplicitLeft = 191
-        ExplicitWidth = 738
-        ExplicitHeight = 423
         object cxGridDBTableView1: TcxGridDBTableView
           Navigator.Buttons.CustomButtons = <>
           DataController.DataSource = dmMain.dsKunde
@@ -537,37 +514,21 @@
       Tag = 2
       Caption = 'Person'
       ImageIndex = 6
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
     end
     object tsProdukt: TcxTabSheet
       Tag = 3
       Caption = 'Produkt'
       ImageIndex = 7
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
     end
     object tsBilag: TcxTabSheet
       Tag = 4
       Caption = 'Bilag'
       ImageIndex = 8
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
     end
     object tsKonto: TcxTabSheet
       Tag = 4
       Caption = 'Konto'
       ImageIndex = 9
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
     end
   end
   object dxBarManager: TdxBarManager
@@ -1692,6 +1653,7 @@
     object acNew: TAction
       Caption = 'Ny'
       ImageIndex = 5
+      OnExecute = acNewExecute
     end
   end
   object ActionList: TActionList
@@ -1878,7 +1840,18 @@
       'acSalg.Checked'
       'acKontakt.Checked'
       'acProdukt.Checked'
-      'acRegnskap.Checked')
+      'acRegnskap.Checked'
+      'tsAbonnement.TabVisible'
+      'tsBilag.TabVisible'
+      'tsFaktura.TabVisible'
+      'tsKonto.TabVisible'
+      'tsKunde.TabVisible'
+      'tsLeverand'#248'r.TabVisible'
+      'tsOrdre.TabVisible'
+      'tsPerson.TabVisible'
+      'tsProdukt.TabVisible'
+      'tsPurring.TabVisible'
+      'pcPages.ActivePage')
     StoredValues = <>
     Left = 656
     Top = 8

@@ -128,6 +128,7 @@ type
     procedure acExitExecute(Sender: TObject);
     procedure acSyncDataExecute(Sender: TObject);
     procedure acSalgExecute(Sender: TObject);
+    procedure acNewExecute(Sender: TObject);
   private
     procedure ShowTabs(GroupIndex: Integer);
     { Private declarations }
@@ -140,7 +141,7 @@ var
 
 implementation
 
-uses BD.dmData, BD.dmMain, BD.Settings, BD.frmSync;
+uses BD.dmData, BD.dmMain, BD.Settings, BD.frmSync, BD.Kunde;
 
 {$R *.dfm}
 
@@ -149,10 +150,17 @@ begin
   Close;
 end;
 
+procedure TfrmMainform.acNewExecute(Sender: TObject);
+begin
+  frmKunde := TfrmKunde.Create(Application);
+  frmKunde.ShowModal;
+  frmKunde.Release;
+end;
+
 procedure TfrmMainform.acSalgExecute(Sender: TObject);
 begin
   with Sender as TAction do
-    ShowTabs(TAction(Sender).Tag);
+    ShowTabs(TAction(Sender).Tag); //Viser kun tabs med tag = Action.tag
 end;
 
 procedure TfrmMainform.acSyncDataExecute(Sender: TObject);

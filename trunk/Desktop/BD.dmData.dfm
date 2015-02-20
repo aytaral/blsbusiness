@@ -1,8 +1,8 @@
 object dmData: TdmData
   OldCreateOrder = False
   OnCreate = DataModuleCreate
-  Height = 527
-  Width = 933
+  Height = 269
+  Width = 712
   object FDConn: TFDConnection
     ConnectionName = 'BlsDB'
     Params.Strings = (
@@ -64,9 +64,11 @@ object dmData: TdmData
       'select '
       '  *'
       'from '
+      '  Postnr'
+      'order by '
       '  Postnr')
-    Left = 616
-    Top = 128
+    Left = 544
+    Top = 32
   end
   object fdPrintType: TFDQuery
     Connection = FDConn
@@ -78,7 +80,7 @@ object dmData: TdmData
       '  PrintType'
       ''
       'order by'
-      '  PrintKode')
+      '  PrintID')
     Left = 432
     Top = 32
   end
@@ -93,6 +95,8 @@ object dmData: TdmData
       'select'
       '  *'
       'from '
+      '  Land'
+      'order by '
       '  Land')
     Left = 488
     Top = 32
@@ -100,6 +104,11 @@ object dmData: TdmData
   object dsLand: TDataSource
     DataSet = fdLand
     Left = 488
+    Top = 80
+  end
+  object dsPostnr: TDataSource
+    DataSet = fdPostnr
+    Left = 544
     Top = 80
   end
 end

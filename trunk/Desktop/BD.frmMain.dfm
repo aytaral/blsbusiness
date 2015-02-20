@@ -238,7 +238,6 @@
         LookAndFeel.NativeStyle = False
         object cxGrid1DBTableView1: TcxGridDBTableView
           Navigator.Buttons.CustomButtons = <>
-          DataController.DataSource = dmData.dsKontakt
           DataController.Summary.DefaultGroupSummaryItems = <>
           DataController.Summary.FooterSummaryItems = <>
           DataController.Summary.SummaryGroups = <>
@@ -281,16 +280,28 @@
       Tag = 1
       Caption = 'Ordre'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
     end
     object tsFaktura: TcxTabSheet
       Tag = 1
       Caption = 'Faktura'
       ImageIndex = 2
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
     end
     object tsPurring: TcxTabSheet
       Tag = 1
       Caption = 'Purring'
       ImageIndex = 3
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
     end
     object tsKunde: TcxTabSheet
       Tag = 2
@@ -514,21 +525,37 @@
       Tag = 2
       Caption = 'Person'
       ImageIndex = 6
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
     end
     object tsProdukt: TcxTabSheet
       Tag = 3
       Caption = 'Produkt'
       ImageIndex = 7
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
     end
     object tsBilag: TcxTabSheet
       Tag = 4
       Caption = 'Bilag'
       ImageIndex = 8
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
     end
     object tsKonto: TcxTabSheet
       Tag = 4
       Caption = 'Konto'
       ImageIndex = 9
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
     end
   end
   object dxBarManager: TdxBarManager

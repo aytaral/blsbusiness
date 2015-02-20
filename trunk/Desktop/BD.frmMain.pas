@@ -131,6 +131,7 @@ type
     procedure acNewExecute(Sender: TObject);
   private
     procedure ShowTabs(GroupIndex: Integer);
+    procedure DoLogin;
     { Private declarations }
   public
     { Public declarations }
@@ -141,13 +142,19 @@ var
 
 implementation
 
-uses BD.dmData, BD.dmMain, BD.Settings, BD.frmSync, BD.Kunde;
+uses BD.dmData, BD.dmMain, BD.Settings, BD.frmSync, BD.Kunde, BD.Vars;
 
 {$R *.dfm}
 
 procedure TfrmMainform.acExitExecute(Sender: TObject);
 begin
   Close;
+end;
+
+procedure TfrmMainform.DoLogin;
+begin
+  Global.KlientID := 1;
+
 end;
 
 procedure TfrmMainform.acNewExecute(Sender: TObject);

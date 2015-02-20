@@ -23,6 +23,7 @@ type
     dsPrintType: TDataSource;
     fdLand: TFDQuery;
     dsLand: TDataSource;
+    dsPostnr: TDataSource;
     procedure FDConnBeforeConnect(Sender: TObject);
     procedure DataModuleCreate(Sender: TObject);
     procedure fdKontaktNewRecord(DataSet: TDataSet);
@@ -61,7 +62,7 @@ end;
 
 procedure TdmData.fdKontaktNewRecord(DataSet: TDataSet);
 begin
-  fdKontaktSerieID.AsString := 'KS';
+  //fdKontaktSerieID.AsString := 'KS';
 end;
 
 end.

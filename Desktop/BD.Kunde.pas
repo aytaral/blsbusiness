@@ -9,7 +9,12 @@ uses
   DBClientActns, Grids, DBGrids, JvExDBGrids, JvDBGrid, System.Actions,
   FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
-  FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
+  FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
+  cxGraphics, cxControls, cxLookAndFeels, cxLookAndFeelPainters, cxStyles,
+  dxSkinsCore, dxSkinOffice2010Black, dxSkinOffice2010Blue, dxSkinscxPCPainter,
+  cxCustomData, cxFilter, cxData, cxDataStorage, cxEdit, cxNavigator, cxDBData,
+  cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGridLevel,
+  cxClasses, cxGridCustomView, cxGrid;
 
 type
   TfrmKunde = class(TForm)
@@ -32,7 +37,6 @@ type
     acPrior: TDataSetPrior;
     acNext: TDataSetNext;
     acLast: TDataSetLast;
-    adoKunde: TADODataSet;
     dspKunde: TDataSetProvider;
     cdsKunde: TClientDataSet;
     dsKunde: TDataSource;
@@ -73,32 +77,6 @@ type
     DBEdit2: TDBEdit;
     Label12: TLabel;
     DBLookupComboBox3: TDBLookupComboBox;
-    cdsKundeIDKLIENT: TIntegerField;
-    cdsKundeKONTAKTNR: TIntegerField;
-    cdsKundeIDSERIE: TStringField;
-    cdsKundeNAVN: TStringField;
-    cdsKundePOSTADR1: TStringField;
-    cdsKundePOSTADR2: TStringField;
-    cdsKundePOSTNR: TStringField;
-    cdsKundeBESOKADR1: TStringField;
-    cdsKundeBESOKADR2: TStringField;
-    cdsKundeBESOKPOSTNR: TStringField;
-    cdsKundeLAND: TStringField;
-    cdsKundeORGNR: TStringField;
-    cdsKundeTELEFON: TStringField;
-    cdsKundeFAKS: TStringField;
-    cdsKundeMOBIL: TStringField;
-    cdsKundeEPOST: TStringField;
-    cdsKundeWEB: TStringField;
-    cdsKundeBANKKONTO: TStringField;
-    cdsKundeKONTAKT: TStringField;
-    cdsKundeINFO: TMemoField;
-    cdsKundeIDGRUPPE: TIntegerField;
-    cdsKundeIDKUNDETYPE: TIntegerField;
-    cdsKundeREGDATO: TDateTimeField;
-    cdsKundeENDRETDATO: TDateTimeField;
-    cdsKundePOSTSTED: TStringField;
-    cdsKundeBESOKPSTED: TStringField;
     adoGruppe: TADODataSet;
     dsGruppe: TDataSource;
     adoKundeType: TADODataSet;
@@ -108,47 +86,17 @@ type
     Label16: TLabel;
     DBText1: TDBText;
     DBText2: TDBText;
-    adoLand: TADODataSet;
-    dsLand: TDataSource;
     GroupBox6: TGroupBox;
     GroupBox8: TGroupBox;
     DBEdit18: TDBEdit;
     DBEdit19: TDBEdit;
     DBEdit20: TDBEdit;
-    cdsKundeFORFALLSDAGER: TIntegerField;
-    cdsKundeRABATT: TFloatField;
     Label17: TLabel;
     Label18: TLabel;
     Label19: TLabel;
     DataSetCancel1: TDataSetCancel;
     DataSetPost1: TDataSetPost;
     acNy: TAction;
-    adoKundeIDKLIENT: TIntegerField;
-    adoKundeKONTAKTNR: TIntegerField;
-    adoKundeIDSERIE: TStringField;
-    adoKundeNAVN: TStringField;
-    adoKundePOSTADR1: TStringField;
-    adoKundePOSTADR2: TStringField;
-    adoKundePOSTNR: TStringField;
-    adoKundeBESOKADR1: TStringField;
-    adoKundeBESOKADR2: TStringField;
-    adoKundeBESOKPOSTNR: TStringField;
-    adoKundeLAND: TStringField;
-    adoKundeORGNR: TStringField;
-    adoKundeTELEFON: TStringField;
-    adoKundeFAKS: TStringField;
-    adoKundeMOBIL: TStringField;
-    adoKundeEPOST: TStringField;
-    adoKundeWEB: TStringField;
-    adoKundeBANKKONTO: TStringField;
-    adoKundeKONTAKT: TStringField;
-    adoKundeFORFALLSDAGER: TIntegerField;
-    adoKundeRABATT: TFloatField;
-    adoKundeINFO: TMemoField;
-    adoKundeIDGRUPPE: TIntegerField;
-    adoKundeIDKUNDETYPE: TIntegerField;
-    adoKundeREGDATO: TDateTimeField;
-    adoKundeENDRETDATO: TDateTimeField;
     GroupBox7: TGroupBox;
     Label20: TLabel;
     DBEdit1: TDBEdit;
@@ -156,39 +104,14 @@ type
     GroupBox10: TGroupBox;
     dblUtsendelse: TDBLookupComboBox;
     Label21: TLabel;
-    adoKundeIDUTSENDELSE: TIntegerField;
-    cdsKundeIDUTSENDELSE: TIntegerField;
-    adoKundeKREDITT: TFloatField;
-    cdsKundeKREDITT: TFloatField;
-    adoKundeAKTIV: TSmallintField;
-    cdsKundeAKTIV: TSmallintField;
     acWebInfo: TAction;
     acSettings: TAction;
     DBCheckBox1: TDBCheckBox;
     dbgFordring: TJvDBGrid;
-    adoFordringer: TADODataSet;
     dsFordringer: TDataSource;
-    GroupBox11: TGroupBox;
-    adoFordringerFAKTURANR: TIntegerField;
-    adoFordringerFAKTURADATO: TDateField;
-    adoFordringerFORFALLDATO: TDateField;
-    adoFordringerNAVN: TStringField;
-    adoFordringerSUMEKS: TFloatField;
-    adoFordringerSUMMVA: TFloatField;
-    adoFordringerSUMRAB: TFloatField;
-    adoFordringerSUMTOT: TFloatField;
-    adoPerson: TADODataSet;
     dspPerson: TDataSetProvider;
     cdsPerson: TClientDataSet;
     dsPerson: TDataSource;
-    adoPersonIDPERSON: TIntegerField;
-    adoPersonIDKLIENT: TIntegerField;
-    adoPersonKONTAKTNR: TIntegerField;
-    adoPersonNAVN: TStringField;
-    adoPersonEPOST: TStringField;
-    adoPersonTELEFON: TStringField;
-    adoPersonMOBIL: TStringField;
-    adoPersonINFO: TStringField;
     cdsPersonIDPERSON: TIntegerField;
     cdsPersonIDKLIENT: TIntegerField;
     cdsPersonKONTAKTNR: TIntegerField;
@@ -197,8 +120,82 @@ type
     cdsPersonTELEFON: TStringField;
     cdsPersonMOBIL: TStringField;
     cdsPersonINFO: TStringField;
-    JvDBGrid1: TJvDBGrid;
     fdKunde: TFDQuery;
+    fdFordringer: TFDQuery;
+    fdPerson: TFDQuery;
+    tvPerson: TcxGridDBTableView;
+    dbgPersonLevel: TcxGridLevel;
+    dbgPerson: TcxGrid;
+    tvPersonIDPERSON: TcxGridDBColumn;
+    tvPersonIDKLIENT: TcxGridDBColumn;
+    tvPersonKONTAKTNR: TcxGridDBColumn;
+    tvPersonNAVN: TcxGridDBColumn;
+    tvPersonEPOST: TcxGridDBColumn;
+    tvPersonTELEFON: TcxGridDBColumn;
+    tvPersonMOBIL: TcxGridDBColumn;
+    tvPersonINFO: TcxGridDBColumn;
+    fdKundeKlientID: TIntegerField;
+    fdKundeKontaktnr: TIntegerField;
+    fdKundeNavn: TStringField;
+    fdKundePostAdr1: TStringField;
+    fdKundePostAdr2: TStringField;
+    fdKundePostnr: TStringField;
+    fdKundeBesokAdr1: TStringField;
+    fdKundeBesokAdr2: TStringField;
+    fdKundeBesokPostnr: TStringField;
+    fdKundeLandKode: TStringField;
+    fdKundeOrgnr: TStringField;
+    fdKundeTelefon: TStringField;
+    fdKundeFaks: TStringField;
+    fdKundeMobil: TStringField;
+    fdKundeEpost: TStringField;
+    fdKundeWeb: TStringField;
+    fdKundeBankkonto: TStringField;
+    fdKundeKontakt: TStringField;
+    fdKundeForfallsdager: TSmallintField;
+    fdKundeKreditt: TIntegerField;
+    fdKundeRabatt: TBCDField;
+    fdKundeInfo: TMemoField;
+    fdKundeSerieID: TStringField;
+    fdKundeKontaktTypeID: TSmallintField;
+    fdKundePrintID: TStringField;
+    fdKundeSektorKode: TSmallintField;
+    fdKundeBransjeKode: TStringField;
+    fdKundeRegDato: TSQLTimeStampField;
+    fdKundeEndretDato: TSQLTimeStampField;
+    fdKundeAktiv: TSmallintField;
+    fdKundeBrukerID: TStringField;
+    cdsKundeKlientID: TIntegerField;
+    cdsKundeKontaktnr: TIntegerField;
+    cdsKundeNavn: TStringField;
+    cdsKundePostAdr1: TStringField;
+    cdsKundePostAdr2: TStringField;
+    cdsKundePostnr: TStringField;
+    cdsKundeBesokAdr1: TStringField;
+    cdsKundeBesokAdr2: TStringField;
+    cdsKundeBesokPostnr: TStringField;
+    cdsKundeLandKode: TStringField;
+    cdsKundeOrgnr: TStringField;
+    cdsKundeTelefon: TStringField;
+    cdsKundeFaks: TStringField;
+    cdsKundeMobil: TStringField;
+    cdsKundeEpost: TStringField;
+    cdsKundeWeb: TStringField;
+    cdsKundeBankkonto: TStringField;
+    cdsKundeKontakt: TStringField;
+    cdsKundeForfallsdager: TSmallintField;
+    cdsKundeKreditt: TIntegerField;
+    cdsKundeRabatt: TBCDField;
+    cdsKundeInfo: TMemoField;
+    cdsKundeSerieID: TStringField;
+    cdsKundeKontaktTypeID: TSmallintField;
+    cdsKundePrintID: TStringField;
+    cdsKundeSektorKode: TSmallintField;
+    cdsKundeBransjeKode: TStringField;
+    cdsKundeRegDato: TSQLTimeStampField;
+    cdsKundeEndretDato: TSQLTimeStampField;
+    cdsKundeAktiv: TSmallintField;
+    cdsKundeBrukerID: TStringField;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure dsMasterKundeDataChange(Sender: TObject; Field: TField);
@@ -241,14 +238,14 @@ uses BD.dmMain, BD.dmData, BD.Vars; //rsData, rsPostnr, blsFileUtil, rsKundeBrRe
 procedure TfrmKunde.FormCreate(Sender: TObject);
 begin
   NyKunde := False;
-  adoKundeType.Open;
-  adoLand.Open;
-  adoUtsendelse.Open;
-  adoGruppe.Parameters.ParamValues['IdKlient'] := Global.KlientID;
-  adoGruppe.Open;
+//  adoKundeType.Open;
+//  adoLand.Open;
+//  adoUtsendelse.Open;
+//  adoGruppe.Parameters.ParamValues['IdKlient'] := Global.KlientID;
+//  adoGruppe.Open;
 
-  adoKunde.Parameters.ParamValues['IdKlient'] := Global.KlientID;
-  adoKunde.Parameters.ParamValues['Knr'] := Kundenr;
+  fdKunde.Params.ParamValues['KlientId'] := Global.KlientID;
+  fdKunde.Params.ParamValues['Kontaktnr'] := Kundenr;
   cdsKunde.Open;
 
   Pc.ActivePageIndex := 0;
@@ -256,12 +253,12 @@ end;
 
 procedure TfrmKunde.FormDestroy(Sender: TObject);
 begin
-  adoKundeType.Close;
-  adoGruppe.Close;
-  cdsKunde.Close;
-  adoLand.Close;
-  adoUtsendelse.Close;
-  adoFordringer.Close;
+//  adoKundeType.Close;
+//  adoGruppe.Close;
+//  cdsKunde.Close;
+//  adoLand.Close;
+//  adoUtsendelse.Close;
+//  adoFordringer.Close;
   cdsPerson.Close;
 end;
 
@@ -270,7 +267,7 @@ procedure TfrmKunde.dsMasterKundeDataChange(Sender: TObject;
 begin
   if cdsKunde.Active and (Field = nil) then begin
     cdsKunde.ApplyUpdates(-1);
-    adoKunde.Parameters.ParamValues['Knr'] := dmMain.fqKunde.FieldValues['Kontaktnr'];  //Dm.cdsKundeKONTAKTNR.Value;
+    fdKunde.Params.ParamValues['Knr'] := dmMain.fqKunde.FieldValues['Kontaktnr'];  //Dm.cdsKundeKONTAKTNR.Value;
     cdsKunde.Refresh;
   end;
 end;
@@ -373,7 +370,7 @@ end;
 
 procedure TfrmKunde.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
-  if ModalResult <> mrOK then
+  if (ModalResult <> mrOK) and cdsKunde.Active then
     cdsKunde.CancelUpdates;
 end;
 
@@ -478,13 +475,13 @@ end;
 procedure TfrmKunde.PcChange(Sender: TObject);
 begin
   if Pc.ActivePage = tsOkonomi then begin
-    adoFordringer.Parameters.ParamValues['IdKlient'] := Global.KlientID;
-    adoFordringer.Parameters.ParamValues['Kontaktnr'] := cdsKundeKONTAKTNR.Value;
-    adoFordringer.Open;
+    fdFordringer.Params.ParamValues['IdKlient'] := Global.KlientID;
+    fdFordringer.Params.ParamValues['Kontaktnr'] := cdsKundeKONTAKTNR.Value;
+    fdFordringer.Open;
   end
   else if Pc.ActivePage = tsKontakt then begin
-    adoPerson.Parameters.ParamValues['IdKlient'] := Global.KlientID;
-    adoPerson.Parameters.ParamValues['Kontaktnr'] := cdsKundeKONTAKTNR.Value;
+    fdPerson.Params.ParamValues['IdKlient'] := Global.KlientID;
+    fdPerson.Params.ParamValues['Kontaktnr'] := cdsKundeKONTAKTNR.Value;
     cdsPerson.Open;
   end;
 end;

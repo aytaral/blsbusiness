@@ -62,7 +62,7 @@ object frmKunde: TfrmKunde
       Width = 36
       Height = 11
       AutoSize = True
-      DataField = 'REGDATO'
+      DataField = 'RegDato'
       DataSource = dsKunde
       Font.Charset = DEFAULT_CHARSET
       Font.Color = 7105644
@@ -77,7 +77,7 @@ object frmKunde: TfrmKunde
       Width = 36
       Height = 11
       AutoSize = True
-      DataField = 'ENDRETDATO'
+      DataField = 'EndretDato'
       DataSource = dsKunde
       Font.Charset = DEFAULT_CHARSET
       Font.Color = 7105644
@@ -123,7 +123,7 @@ object frmKunde: TfrmKunde
       Top = 5
       Width = 601
       Height = 497
-      ActivePage = tsKunde
+      ActivePage = tsMerknader
       Align = alClient
       TabOrder = 0
       OnChange = PcChange
@@ -170,7 +170,7 @@ object frmKunde: TfrmKunde
             Top = 36
             Width = 269
             Height = 21
-            DataField = 'NAVN'
+            DataField = 'Navn'
             DataSource = dsKunde
             TabOrder = 0
           end
@@ -179,7 +179,7 @@ object frmKunde: TfrmKunde
             Top = 85
             Width = 349
             Height = 21
-            DataField = 'POSTADR1'
+            DataField = 'PostAdr1'
             DataSource = dsKunde
             TabOrder = 2
           end
@@ -188,7 +188,7 @@ object frmKunde: TfrmKunde
             Top = 133
             Width = 117
             Height = 21
-            DataField = 'POSTNR'
+            DataField = 'Postnr'
             DataSource = dsKunde
             TabOrder = 4
           end
@@ -199,7 +199,6 @@ object frmKunde: TfrmKunde
             Height = 21
             TabStop = False
             Color = clBtnFace
-            DataField = 'POSTSTED'
             DataSource = dsKunde
             ReadOnly = True
             TabOrder = 5
@@ -209,7 +208,7 @@ object frmKunde: TfrmKunde
             Top = 109
             Width = 349
             Height = 21
-            DataField = 'POSTADR2'
+            DataField = 'PostAdr2'
             DataSource = dsKunde
             TabOrder = 3
           end
@@ -218,7 +217,7 @@ object frmKunde: TfrmKunde
             Top = 182
             Width = 349
             Height = 21
-            DataField = 'BESOKADR1'
+            DataField = 'BesokAdr1'
             DataSource = dsKunde
             TabOrder = 7
           end
@@ -227,7 +226,7 @@ object frmKunde: TfrmKunde
             Top = 206
             Width = 349
             Height = 21
-            DataField = 'BESOKADR2'
+            DataField = 'BesokAdr2'
             DataSource = dsKunde
             TabOrder = 8
           end
@@ -236,7 +235,7 @@ object frmKunde: TfrmKunde
             Top = 230
             Width = 117
             Height = 21
-            DataField = 'BESOKPOSTNR'
+            DataField = 'BesokPostnr'
             DataSource = dsKunde
             TabOrder = 9
           end
@@ -247,7 +246,6 @@ object frmKunde: TfrmKunde
             Height = 21
             TabStop = False
             Color = clBtnFace
-            DataField = 'BESOKPSTED'
             DataSource = dsKunde
             ReadOnly = True
             TabOrder = 10
@@ -277,7 +275,7 @@ object frmKunde: TfrmKunde
             Height = 21
             TabStop = False
             Color = clBtnFace
-            DataField = 'KONTAKTNR'
+            DataField = 'Kontaktnr'
             DataSource = dsKunde
             ReadOnly = True
             TabOrder = 1
@@ -309,7 +307,7 @@ object frmKunde: TfrmKunde
             Top = 36
             Width = 349
             Height = 21
-            DataField = 'WEB'
+            DataField = 'Web'
             DataSource = dsKunde
             TabOrder = 0
           end
@@ -318,7 +316,7 @@ object frmKunde: TfrmKunde
             Top = 76
             Width = 349
             Height = 21
-            DataField = 'EPOST'
+            DataField = 'Epost'
             DataSource = dsKunde
             TabOrder = 1
           end
@@ -363,7 +361,7 @@ object frmKunde: TfrmKunde
             Top = 36
             Width = 149
             Height = 21
-            DataField = 'TELEFON'
+            DataField = 'Telefon'
             DataSource = dsKunde
             TabOrder = 0
           end
@@ -372,7 +370,7 @@ object frmKunde: TfrmKunde
             Top = 116
             Width = 149
             Height = 21
-            DataField = 'FAKS'
+            DataField = 'Faks'
             DataSource = dsKunde
             TabOrder = 2
           end
@@ -381,7 +379,7 @@ object frmKunde: TfrmKunde
             Top = 76
             Width = 149
             Height = 21
-            DataField = 'MOBIL'
+            DataField = 'Mobil'
             DataSource = dsKunde
             TabOrder = 1
           end
@@ -390,7 +388,7 @@ object frmKunde: TfrmKunde
             Top = 156
             Width = 149
             Height = 21
-            DataField = 'KONTAKT'
+            DataField = 'Kontakt'
             DataSource = dsKunde
             TabOrder = 3
           end
@@ -464,7 +462,7 @@ object frmKunde: TfrmKunde
             Top = 36
             Width = 149
             Height = 21
-            DataField = 'ORGNR'
+            DataField = 'Orgnr'
             DataSource = dsKunde
             TabOrder = 0
             OnChange = dbeOrgnrChange
@@ -474,11 +472,10 @@ object frmKunde: TfrmKunde
             Top = 76
             Width = 149
             Height = 21
-            DataField = 'LAND'
+            DataField = 'LandKode'
             DataSource = dsKunde
-            KeyField = 'LAND'
-            ListField = 'LAND'
-            ListSource = dsLand
+            KeyField = 'LandKode'
+            ListField = 'Land'
             TabOrder = 1
           end
           object DBCheckBox1: TDBCheckBox
@@ -487,7 +484,7 @@ object frmKunde: TfrmKunde
             Width = 53
             Height = 17
             Caption = 'Aktiv'
-            DataField = 'AKTIV'
+            DataField = 'Aktiv'
             DataSource = dsKunde
             TabOrder = 4
             ValueChecked = '1'
@@ -517,7 +514,7 @@ object frmKunde: TfrmKunde
             Width = 546
             Height = 408
             Anchors = [akLeft, akTop, akRight, akBottom]
-            DataField = 'INFO'
+            DataField = 'Info'
             DataSource = dsKunde
             ScrollBars = ssVertical
             TabOrder = 0
@@ -560,7 +557,7 @@ object frmKunde: TfrmKunde
             Top = 36
             Width = 69
             Height = 21
-            DataField = 'FORFALLSDAGER'
+            DataField = 'Forfallsdager'
             DataSource = dsKunde
             TabOrder = 0
           end
@@ -569,7 +566,7 @@ object frmKunde: TfrmKunde
             Top = 36
             Width = 101
             Height = 21
-            DataField = 'KREDITT'
+            DataField = 'Kreditt'
             DataSource = dsKunde
             TabOrder = 1
           end
@@ -578,7 +575,7 @@ object frmKunde: TfrmKunde
             Top = 36
             Width = 73
             Height = 21
-            DataField = 'RABATT'
+            DataField = 'Rabatt'
             DataSource = dsKunde
             TabOrder = 2
           end
@@ -623,7 +620,6 @@ object frmKunde: TfrmKunde
             TitleRowHeight = 15
             Columns = <
               item
-                Alignment = taLeftJustify
                 Expanded = False
                 FieldName = 'FAKTURANR'
                 Title.Caption = 'Fakturanr'
@@ -646,7 +642,7 @@ object frmKunde: TfrmKunde
                 Expanded = False
                 FieldName = 'NAVN'
                 Title.Caption = 'Kundenavn'
-                Width = 185
+                Width = 165
                 Visible = True
               end
               item
@@ -718,7 +714,7 @@ object frmKunde: TfrmKunde
             Top = 36
             Width = 223
             Height = 21
-            DataField = 'BANKKONTO'
+            DataField = 'Bankkonto'
             DataSource = dsKunde
             TabOrder = 0
           end
@@ -750,93 +746,77 @@ object frmKunde: TfrmKunde
             Top = 36
             Width = 223
             Height = 21
-            DataField = 'IDUTSENDELSE'
+            DataField = 'PrintID'
             DataSource = dsKunde
-            KeyField = 'IDUTSENDELSE'
-            ListField = 'UTSENDELSE'
+            KeyField = 'PrintID'
+            ListField = 'PrintType'
+            ListSource = dmData.dsPrintType
             NullValueKey = 46
             TabOrder = 0
           end
         end
       end
       object tsKontakt: TTabSheet
+        BorderWidth = 8
         Caption = 'Kontakter'
         ImageIndex = -1
-        DesignSize = (
-          593
-          469)
-        object GroupBox11: TGroupBox
-          Left = 8
-          Top = 7
-          Width = 574
-          Height = 445
-          Anchors = [akLeft, akTop, akRight, akBottom]
-          Caption = 'Person informasjon:'
+        object dbgPerson: TcxGrid
+          Left = 0
+          Top = 0
+          Width = 577
+          Height = 453
+          Align = alClient
           TabOrder = 0
-          object JvDBGrid1: TJvDBGrid
-            Left = 14
-            Top = 24
-            Width = 545
-            Height = 374
-            DataSource = dsPerson
-            TabOrder = 0
-            TitleFont.Charset = DEFAULT_CHARSET
-            TitleFont.Color = clWindowText
-            TitleFont.Height = -11
-            TitleFont.Name = 'Tahoma'
-            TitleFont.Style = []
-            AutoSizeColumns = True
-            AutoSizeColumnIndex = 4
-            SelectColumnsDialogStrings.Caption = 'Select columns'
-            SelectColumnsDialogStrings.OK = '&OK'
-            SelectColumnsDialogStrings.NoSelectionWarning = 'At least one column must be visible!'
-            EditControls = <>
-            RowsHeight = 17
-            TitleRowHeight = 17
-            Columns = <
-              item
-                Expanded = False
-                FieldName = 'NAVN'
-                Title.Caption = 'Navn'
-                Width = 130
-                Visible = True
-              end
-              item
-                Expanded = False
-                FieldName = 'EPOST'
-                Title.Caption = 'E-post'
-                Width = 100
-                Visible = True
-              end
-              item
-                Expanded = False
-                FieldName = 'TELEFON'
-                Title.Caption = 'Telefon'
-                Width = 65
-                Visible = True
-              end
-              item
-                Expanded = False
-                FieldName = 'MOBIL'
-                Title.Caption = 'Mobil'
-                Width = 65
-                Visible = True
-              end
-              item
-                Expanded = False
-                FieldName = 'INFO'
-                Title.Caption = 'Informasjon'
-                Width = 164
-                Visible = True
-              end>
+          object tvPerson: TcxGridDBTableView
+            Navigator.Buttons.CustomButtons = <>
+            DataController.DataSource = dsPerson
+            DataController.Summary.DefaultGroupSummaryItems = <>
+            DataController.Summary.FooterSummaryItems = <>
+            DataController.Summary.SummaryGroups = <>
+            object tvPersonIDPERSON: TcxGridDBColumn
+              DataBinding.FieldName = 'IDPERSON'
+              Visible = False
+              VisibleForCustomization = False
+            end
+            object tvPersonIDKLIENT: TcxGridDBColumn
+              DataBinding.FieldName = 'IDKLIENT'
+              Visible = False
+              VisibleForCustomization = False
+            end
+            object tvPersonKONTAKTNR: TcxGridDBColumn
+              DataBinding.FieldName = 'KONTAKTNR'
+              Visible = False
+              VisibleForCustomization = False
+            end
+            object tvPersonNAVN: TcxGridDBColumn
+              DataBinding.FieldName = 'NAVN'
+              Width = 133
+            end
+            object tvPersonEPOST: TcxGridDBColumn
+              DataBinding.FieldName = 'EPOST'
+              Width = 120
+            end
+            object tvPersonTELEFON: TcxGridDBColumn
+              DataBinding.FieldName = 'TELEFON'
+            end
+            object tvPersonMOBIL: TcxGridDBColumn
+              DataBinding.FieldName = 'MOBIL'
+            end
+            object tvPersonINFO: TcxGridDBColumn
+              DataBinding.FieldName = 'INFO'
+              Width = 49
+            end
+          end
+          object dbgPersonLevel: TcxGridLevel
+            GridView = tvPerson
           end
         end
       end
     end
   end
   object ActionList: TActionList
-    Left = 501
-    Top = 11
+    Left = 493
+    Top = 3
     object acFirst: TDataSetFirst
       Category = 'Dataset'
       Caption = 'G'#229' til f'#248'rste kunde'
@@ -901,279 +881,144 @@ object frmKunde: TfrmKunde
       OnExecute = acSettingsExecute
     end
   end
-  object adoKunde: TADODataSet
-    CommandText = 
-      'select * from KONTAKT'#13#10'where IDKLIENT = :IdKlient'#13#10'and KONTAKTNR' +
-      ' = :Knr;'
-    Parameters = <
-      item
-        Name = 'IdKlient'
-        DataType = ftInteger
-        Precision = 10
-        Size = 4
-        Value = 1
-      end
-      item
-        Name = 'Knr'
-        DataType = ftInteger
-        Precision = 10
-        Size = 4
-        Value = 10720
-      end>
-    Left = 292
-    Top = 492
-    object adoKundeIDKLIENT: TIntegerField
-      FieldName = 'IDKLIENT'
-      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-    end
-    object adoKundeKONTAKTNR: TIntegerField
-      FieldName = 'KONTAKTNR'
-      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-    end
-    object adoKundeIDSERIE: TStringField
-      FieldName = 'IDSERIE'
-      Size = 2
-    end
-    object adoKundeNAVN: TStringField
-      FieldName = 'NAVN'
-      Size = 80
-    end
-    object adoKundePOSTADR1: TStringField
-      FieldName = 'POSTADR1'
-      Size = 60
-    end
-    object adoKundePOSTADR2: TStringField
-      FieldName = 'POSTADR2'
-      Size = 60
-    end
-    object adoKundePOSTNR: TStringField
-      FieldName = 'POSTNR'
-      Size = 6
-    end
-    object adoKundeBESOKADR1: TStringField
-      FieldName = 'BESOKADR1'
-      Size = 60
-    end
-    object adoKundeBESOKADR2: TStringField
-      FieldName = 'BESOKADR2'
-      Size = 60
-    end
-    object adoKundeBESOKPOSTNR: TStringField
-      FieldName = 'BESOKPOSTNR'
-      Size = 6
-    end
-    object adoKundeLAND: TStringField
-      FieldName = 'LAND'
-      Size = 25
-    end
-    object adoKundeORGNR: TStringField
-      FieldName = 'ORGNR'
-      Size = 25
-    end
-    object adoKundeTELEFON: TStringField
-      FieldName = 'TELEFON'
-      Size = 14
-    end
-    object adoKundeFAKS: TStringField
-      FieldName = 'FAKS'
-      Size = 14
-    end
-    object adoKundeMOBIL: TStringField
-      FieldName = 'MOBIL'
-      Size = 14
-    end
-    object adoKundeEPOST: TStringField
-      FieldName = 'EPOST'
-      Size = 50
-    end
-    object adoKundeWEB: TStringField
-      FieldName = 'WEB'
-      Size = 50
-    end
-    object adoKundeBANKKONTO: TStringField
-      FieldName = 'BANKKONTO'
-      Size = 15
-    end
-    object adoKundeKONTAKT: TStringField
-      FieldName = 'KONTAKT'
-      Size = 30
-    end
-    object adoKundeFORFALLSDAGER: TIntegerField
-      FieldName = 'FORFALLSDAGER'
-    end
-    object adoKundeRABATT: TFloatField
-      FieldName = 'RABATT'
-    end
-    object adoKundeINFO: TMemoField
-      FieldName = 'INFO'
-      BlobType = ftMemo
-    end
-    object adoKundeIDGRUPPE: TIntegerField
-      FieldName = 'IDGRUPPE'
-    end
-    object adoKundeIDKUNDETYPE: TIntegerField
-      FieldName = 'IDKUNDETYPE'
-    end
-    object adoKundeREGDATO: TDateTimeField
-      FieldName = 'REGDATO'
-    end
-    object adoKundeENDRETDATO: TDateTimeField
-      FieldName = 'ENDRETDATO'
-    end
-    object adoKundeIDUTSENDELSE: TIntegerField
-      FieldName = 'IDUTSENDELSE'
-    end
-    object adoKundeKREDITT: TFloatField
-      FieldName = 'KREDITT'
-    end
-    object adoKundeAKTIV: TSmallintField
-      FieldName = 'AKTIV'
-    end
-  end
   object dspKunde: TDataSetProvider
-    DataSet = adoKunde
+    DataSet = fdKunde
     UpdateMode = upWhereKeyOnly
-    Left = 324
-    Top = 492
+    Left = 280
+    Top = 480
   end
   object cdsKunde: TClientDataSet
     Aggregates = <>
     Params = <>
     ProviderName = 'dspKunde'
-    Left = 356
-    Top = 492
-    object cdsKundeIDKLIENT: TIntegerField
-      FieldName = 'IDKLIENT'
+    Left = 312
+    Top = 480
+    object cdsKundeKlientID: TIntegerField
+      FieldName = 'KlientID'
+      Required = True
     end
-    object cdsKundeKONTAKTNR: TIntegerField
-      FieldName = 'KONTAKTNR'
+    object cdsKundeKontaktnr: TIntegerField
+      FieldName = 'Kontaktnr'
+      Required = True
     end
-    object cdsKundeIDSERIE: TStringField
-      FieldName = 'IDSERIE'
-      Size = 2
-    end
-    object cdsKundeNAVN: TStringField
-      FieldName = 'NAVN'
+    object cdsKundeNavn: TStringField
+      FieldName = 'Navn'
       Size = 80
     end
-    object cdsKundePOSTADR1: TStringField
-      FieldName = 'POSTADR1'
+    object cdsKundePostAdr1: TStringField
+      FieldName = 'PostAdr1'
       Size = 60
     end
-    object cdsKundePOSTADR2: TStringField
-      FieldName = 'POSTADR2'
+    object cdsKundePostAdr2: TStringField
+      FieldName = 'PostAdr2'
       Size = 60
     end
-    object cdsKundePOSTNR: TStringField
-      FieldName = 'POSTNR'
-      OnSetText = cdsKundePOSTNRSetText
+    object cdsKundePostnr: TStringField
+      FieldName = 'Postnr'
       Size = 6
     end
-    object cdsKundeBESOKADR1: TStringField
-      FieldName = 'BESOKADR1'
+    object cdsKundeBesokAdr1: TStringField
+      FieldName = 'BesokAdr1'
       Size = 60
     end
-    object cdsKundeBESOKADR2: TStringField
-      FieldName = 'BESOKADR2'
+    object cdsKundeBesokAdr2: TStringField
+      FieldName = 'BesokAdr2'
       Size = 60
     end
-    object cdsKundeBESOKPOSTNR: TStringField
-      FieldName = 'BESOKPOSTNR'
-      OnSetText = cdsKundeBESOKPOSTNRSetText
+    object cdsKundeBesokPostnr: TStringField
+      FieldName = 'BesokPostnr'
       Size = 6
     end
-    object cdsKundeLAND: TStringField
-      FieldName = 'LAND'
+    object cdsKundeLandKode: TStringField
+      FieldName = 'LandKode'
+      Size = 3
+    end
+    object cdsKundeOrgnr: TStringField
+      FieldName = 'Orgnr'
       Size = 25
     end
-    object cdsKundeORGNR: TStringField
-      FieldName = 'ORGNR'
-      Size = 25
-    end
-    object cdsKundeTELEFON: TStringField
-      FieldName = 'TELEFON'
-      Size = 14
-    end
-    object cdsKundeFAKS: TStringField
-      FieldName = 'FAKS'
-      Size = 14
-    end
-    object cdsKundeMOBIL: TStringField
-      FieldName = 'MOBIL'
-      Size = 14
-    end
-    object cdsKundeEPOST: TStringField
-      FieldName = 'EPOST'
-      Size = 50
-    end
-    object cdsKundeWEB: TStringField
-      FieldName = 'WEB'
-      Size = 50
-    end
-    object cdsKundeBANKKONTO: TStringField
-      FieldName = 'BANKKONTO'
+    object cdsKundeTelefon: TStringField
+      FieldName = 'Telefon'
       Size = 15
     end
-    object cdsKundeKONTAKT: TStringField
-      FieldName = 'KONTAKT'
+    object cdsKundeFaks: TStringField
+      FieldName = 'Faks'
+      Size = 15
+    end
+    object cdsKundeMobil: TStringField
+      FieldName = 'Mobil'
+      Size = 15
+    end
+    object cdsKundeEpost: TStringField
+      FieldName = 'Epost'
+      Size = 80
+    end
+    object cdsKundeWeb: TStringField
+      FieldName = 'Web'
+      Size = 100
+    end
+    object cdsKundeBankkonto: TStringField
+      FieldName = 'Bankkonto'
+      Size = 15
+    end
+    object cdsKundeKontakt: TStringField
+      FieldName = 'Kontakt'
       Size = 30
     end
-    object cdsKundeINFO: TMemoField
-      FieldName = 'INFO'
+    object cdsKundeForfallsdager: TSmallintField
+      FieldName = 'Forfallsdager'
+    end
+    object cdsKundeKreditt: TIntegerField
+      FieldName = 'Kreditt'
+    end
+    object cdsKundeRabatt: TBCDField
+      FieldName = 'Rabatt'
+      Precision = 18
+      Size = 2
+    end
+    object cdsKundeInfo: TMemoField
+      FieldName = 'Info'
       BlobType = ftMemo
+      Size = 2147483647
     end
-    object cdsKundeIDGRUPPE: TIntegerField
-      FieldName = 'IDGRUPPE'
+    object cdsKundeSerieID: TStringField
+      FieldName = 'SerieID'
+      Required = True
+      Size = 2
     end
-    object cdsKundeIDKUNDETYPE: TIntegerField
-      FieldName = 'IDKUNDETYPE'
+    object cdsKundeKontaktTypeID: TSmallintField
+      FieldName = 'KontaktTypeID'
     end
-    object cdsKundeREGDATO: TDateTimeField
-      FieldName = 'REGDATO'
+    object cdsKundePrintID: TStringField
+      FieldName = 'PrintID'
+      Size = 5
     end
-    object cdsKundeENDRETDATO: TDateTimeField
-      FieldName = 'ENDRETDATO'
+    object cdsKundeSektorKode: TSmallintField
+      FieldName = 'SektorKode'
     end
-    object cdsKundePOSTSTED: TStringField
-      FieldKind = fkLookup
-      FieldName = 'POSTSTED'
-      LookupKeyFields = 'POSTNR'
-      LookupResultField = 'POSTSTED'
-      KeyFields = 'POSTNR'
+    object cdsKundeBransjeKode: TStringField
+      FieldName = 'BransjeKode'
+      Size = 10
+    end
+    object cdsKundeRegDato: TSQLTimeStampField
+      FieldName = 'RegDato'
+    end
+    object cdsKundeEndretDato: TSQLTimeStampField
+      FieldName = 'EndretDato'
+    end
+    object cdsKundeAktiv: TSmallintField
+      FieldName = 'Aktiv'
+    end
+    object cdsKundeBrukerID: TStringField
+      FieldName = 'BrukerID'
       Size = 30
-      Lookup = True
-    end
-    object cdsKundeBESOKPSTED: TStringField
-      FieldKind = fkLookup
-      FieldName = 'BESOKPSTED'
-      LookupKeyFields = 'POSTNR'
-      LookupResultField = 'POSTSTED'
-      KeyFields = 'BESOKPOSTNR'
-      Size = 30
-      Lookup = True
-    end
-    object cdsKundeFORFALLSDAGER: TIntegerField
-      FieldName = 'FORFALLSDAGER'
-    end
-    object cdsKundeRABATT: TFloatField
-      FieldName = 'RABATT'
-    end
-    object cdsKundeIDUTSENDELSE: TIntegerField
-      FieldName = 'IDUTSENDELSE'
-    end
-    object cdsKundeKREDITT: TFloatField
-      FieldName = 'KREDITT'
-      DisplayFormat = '#,##0.00'
-    end
-    object cdsKundeAKTIV: TSmallintField
-      FieldName = 'AKTIV'
     end
   end
   object dsKunde: TDataSource
     DataSet = cdsKunde
     OnDataChange = dsKundeDataChange
-    Left = 388
-    Top = 492
+    Left = 344
+    Top = 480
   end
   object adoGruppe: TADODataSet
     CommandText = 
@@ -1209,148 +1054,26 @@ object frmKunde: TfrmKunde
   object dsMasterKunde: TDataSource
     OnDataChange = dsMasterKundeDataChange
     Left = 556
-    Top = 12
-  end
-  object adoLand: TADODataSet
-    CommandText = 'select LAND from LAND'
-    Parameters = <>
-    Left = 521
-    Top = 156
-  end
-  object dsLand: TDataSource
-    DataSet = adoLand
-    Left = 553
-    Top = 156
-  end
-  object adoFordringer: TADODataSet
-    CursorType = ctStatic
-    CommandText = 
-      'select F.FAKTURANR, F.FAKTURADATO, F.FORFALLDATO, K.NAVN,'#13#10'F.SUM' +
-      'EKS, F.SUMMVA, F.SUMRAB, F.SUMTOT'#13#10'from FAKTURA F'#13#10'join KONTAKT ' +
-      'K on (K.KONTAKTNR = F.KUNDENR and K.IDKLIENT = F.IDKLIENT)'#13#10'wher' +
-      'e F.IDKLIENT = :IdKlient'#13#10'and F.KUNDENR = :Kontaktnr'#13#10'and F.IDBE' +
-      'TSTATUS > 10'#13#10'order by F.AAR desc, F.FAKTURANR desc, F.IDKLIENT'
-    Parameters = <
-      item
-        Name = 'IdKlient'
-        DataType = ftInteger
-        Precision = 10
-        Size = 4
-        Value = 1
-      end
-      item
-        Name = 'Kontaktnr'
-        Attributes = [paNullable]
-        DataType = ftInteger
-        Precision = 10
-        Size = 4
-        Value = Null
-      end>
-    Left = 56
-    Top = 424
-    object adoFordringerFAKTURANR: TIntegerField
-      FieldName = 'FAKTURANR'
-    end
-    object adoFordringerFAKTURADATO: TDateField
-      FieldName = 'FAKTURADATO'
-    end
-    object adoFordringerFORFALLDATO: TDateField
-      FieldName = 'FORFALLDATO'
-    end
-    object adoFordringerNAVN: TStringField
-      FieldName = 'NAVN'
-      Size = 80
-    end
-    object adoFordringerSUMEKS: TFloatField
-      FieldName = 'SUMEKS'
-      DisplayFormat = '#,##0.00'
-    end
-    object adoFordringerSUMMVA: TFloatField
-      FieldName = 'SUMMVA'
-      DisplayFormat = '#,##0.00'
-    end
-    object adoFordringerSUMRAB: TFloatField
-      FieldName = 'SUMRAB'
-      DisplayFormat = '#,##0.00'
-    end
-    object adoFordringerSUMTOT: TFloatField
-      FieldName = 'SUMTOT'
-      DisplayFormat = '#,##0.00'
-    end
+    Top = 4
   end
   object dsFordringer: TDataSource
-    DataSet = adoFordringer
-    Left = 88
-    Top = 424
-  end
-  object adoPerson: TADODataSet
-    CursorType = ctStatic
-    CommandText = 
-      'select * '#13#10'from PERSON'#13#10'where IDKLIENT = :IdKlient'#13#10'and KONTAKTN' +
-      'R = :Kontaktnr;'
-    Parameters = <
-      item
-        Name = 'IdKlient'
-        Attributes = [paNullable]
-        DataType = ftInteger
-        Precision = 10
-        Size = 4
-        Value = Null
-      end
-      item
-        Name = 'Kontaktnr'
-        Attributes = [paNullable]
-        DataType = ftInteger
-        Precision = 10
-        Size = 4
-        Value = Null
-      end>
-    Left = 56
-    Top = 392
-    object adoPersonIDPERSON: TIntegerField
-      FieldName = 'IDPERSON'
-      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-    end
-    object adoPersonIDKLIENT: TIntegerField
-      FieldName = 'IDKLIENT'
-    end
-    object adoPersonKONTAKTNR: TIntegerField
-      FieldName = 'KONTAKTNR'
-    end
-    object adoPersonNAVN: TStringField
-      FieldName = 'NAVN'
-      Size = 80
-    end
-    object adoPersonEPOST: TStringField
-      FieldName = 'EPOST'
-      Size = 50
-    end
-    object adoPersonTELEFON: TStringField
-      FieldName = 'TELEFON'
-      Size = 14
-    end
-    object adoPersonMOBIL: TStringField
-      FieldName = 'MOBIL'
-      Size = 14
-    end
-    object adoPersonINFO: TStringField
-      FieldName = 'INFO'
-      Size = 100
-    end
+    DataSet = fdFordringer
+    Left = 160
+    Top = 480
   end
   object dspPerson: TDataSetProvider
-    DataSet = adoPerson
+    DataSet = fdPerson
     UpdateMode = upWhereKeyOnly
-    Left = 88
-    Top = 392
+    Left = 288
+    Top = 8
   end
   object cdsPerson: TClientDataSet
     Aggregates = <>
     Params = <>
     ProviderName = 'dspPerson'
     OnNewRecord = cdsPersonNewRecord
-    Left = 120
-    Top = 392
+    Left = 320
+    Top = 8
     object cdsPersonIDPERSON: TIntegerField
       FieldName = 'IDPERSON'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
@@ -1384,8 +1107,8 @@ object frmKunde: TfrmKunde
   end
   object dsPerson: TDataSource
     DataSet = cdsPerson
-    Left = 152
-    Top = 392
+    Left = 352
+    Top = 8
   end
   object fdKunde: TFDQuery
     Connection = dmData.FDConn
@@ -1398,8 +1121,220 @@ object frmKunde: TfrmKunde
       '  KlientID = :KlientID'
       '  and Kontaktnr = :Kontaktnr'
       '  and SerieID = '#39'KS'#39)
-    Left = 240
-    Top = 488
+    Left = 248
+    Top = 480
+    ParamData = <
+      item
+        Name = 'KLIENTID'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end
+      item
+        Name = 'KONTAKTNR'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end>
+    object fdKundeKlientID: TIntegerField
+      FieldName = 'KlientID'
+      Origin = 'KlientID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object fdKundeKontaktnr: TIntegerField
+      FieldName = 'Kontaktnr'
+      Origin = 'Kontaktnr'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object fdKundeNavn: TStringField
+      FieldName = 'Navn'
+      Origin = 'Navn'
+      Size = 80
+    end
+    object fdKundePostAdr1: TStringField
+      FieldName = 'PostAdr1'
+      Origin = 'PostAdr1'
+      Size = 60
+    end
+    object fdKundePostAdr2: TStringField
+      FieldName = 'PostAdr2'
+      Origin = 'PostAdr2'
+      Size = 60
+    end
+    object fdKundePostnr: TStringField
+      FieldName = 'Postnr'
+      Origin = 'Postnr'
+      Size = 6
+    end
+    object fdKundeBesokAdr1: TStringField
+      FieldName = 'BesokAdr1'
+      Origin = 'BesokAdr1'
+      Size = 60
+    end
+    object fdKundeBesokAdr2: TStringField
+      FieldName = 'BesokAdr2'
+      Origin = 'BesokAdr2'
+      Size = 60
+    end
+    object fdKundeBesokPostnr: TStringField
+      FieldName = 'BesokPostnr'
+      Origin = 'BesokPostnr'
+      Size = 6
+    end
+    object fdKundeLandKode: TStringField
+      FieldName = 'LandKode'
+      Origin = 'LandKode'
+      Size = 3
+    end
+    object fdKundeOrgnr: TStringField
+      FieldName = 'Orgnr'
+      Origin = 'Orgnr'
+      Size = 25
+    end
+    object fdKundeTelefon: TStringField
+      FieldName = 'Telefon'
+      Origin = 'Telefon'
+      Size = 15
+    end
+    object fdKundeFaks: TStringField
+      FieldName = 'Faks'
+      Origin = 'Faks'
+      Size = 15
+    end
+    object fdKundeMobil: TStringField
+      FieldName = 'Mobil'
+      Origin = 'Mobil'
+      Size = 15
+    end
+    object fdKundeEpost: TStringField
+      FieldName = 'Epost'
+      Origin = 'Epost'
+      Size = 80
+    end
+    object fdKundeWeb: TStringField
+      FieldName = 'Web'
+      Origin = 'Web'
+      Size = 100
+    end
+    object fdKundeBankkonto: TStringField
+      FieldName = 'Bankkonto'
+      Origin = 'Bankkonto'
+      Size = 15
+    end
+    object fdKundeKontakt: TStringField
+      FieldName = 'Kontakt'
+      Origin = 'Kontakt'
+      Size = 30
+    end
+    object fdKundeForfallsdager: TSmallintField
+      FieldName = 'Forfallsdager'
+      Origin = 'Forfallsdager'
+    end
+    object fdKundeKreditt: TIntegerField
+      FieldName = 'Kreditt'
+      Origin = 'Kreditt'
+    end
+    object fdKundeRabatt: TBCDField
+      FieldName = 'Rabatt'
+      Origin = 'Rabatt'
+      Precision = 18
+      Size = 2
+    end
+    object fdKundeInfo: TMemoField
+      FieldName = 'Info'
+      Origin = 'Info'
+      BlobType = ftMemo
+      Size = 2147483647
+    end
+    object fdKundeSerieID: TStringField
+      FieldName = 'SerieID'
+      Origin = 'SerieID'
+      Required = True
+      Size = 2
+    end
+    object fdKundeKontaktTypeID: TSmallintField
+      FieldName = 'KontaktTypeID'
+      Origin = 'KontaktTypeID'
+    end
+    object fdKundePrintID: TStringField
+      FieldName = 'PrintID'
+      Origin = 'PrintID'
+      Size = 5
+    end
+    object fdKundeSektorKode: TSmallintField
+      FieldName = 'SektorKode'
+      Origin = 'SektorKode'
+    end
+    object fdKundeBransjeKode: TStringField
+      FieldName = 'BransjeKode'
+      Origin = 'BransjeKode'
+      Size = 10
+    end
+    object fdKundeRegDato: TSQLTimeStampField
+      FieldName = 'RegDato'
+      Origin = 'RegDato'
+    end
+    object fdKundeEndretDato: TSQLTimeStampField
+      FieldName = 'EndretDato'
+      Origin = 'EndretDato'
+    end
+    object fdKundeAktiv: TSmallintField
+      FieldName = 'Aktiv'
+      Origin = 'Aktiv'
+    end
+    object fdKundeBrukerID: TStringField
+      FieldName = 'BrukerID'
+      Origin = 'BrukerID'
+      Size = 30
+    end
+  end
+  object fdFordringer: TFDQuery
+    Connection = dmData.FDConn
+    SQL.Strings = (
+      'select '
+      '  F.Fakturanr, F.Fakturadato, F.Forfallsdato, K.Navn,'
+      '  F.SumEks, F.SumMva, F.SumRab, F.SumTot'
+      'from '
+      '  Faktura F'
+      
+        '  join Kontakt K on (K.Kontaktnr = F.Kontaktnr and K.KlientID = ' +
+        'F.KlientID)'
+      'where '
+      '  F.KlientID = :KlientID'
+      '  and F.Kontaktnr = :Kontaktnr'
+      '  and F.FakturaStatusID > 10'
+      'order by '
+      '  F.KlientID, F.Fakturanr desc')
+    Left = 128
+    Top = 480
+    ParamData = <
+      item
+        Name = 'KLIENTID'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end
+      item
+        Name = 'KONTAKTNR'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end>
+  end
+  object fdPerson: TFDQuery
+    Connection = dmData.FDConn
+    SQL.Strings = (
+      'select '
+      '  * '
+      'from '
+      '  KontaktPerson'
+      'where '
+      '  KlientID = :KlientID'
+      '  and Kontaktnr = :Kontaktnr;')
+    Left = 256
+    Top = 8
     ParamData = <
       item
         Name = 'KLIENTID'

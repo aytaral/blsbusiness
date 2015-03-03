@@ -130,6 +130,10 @@ object frmKunde: TfrmKunde
       object tsKunde: TTabSheet
         Caption = 'Generelt'
         ImageIndex = -1
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object GroupBox1: TGroupBox
           Left = 8
           Top = 8
@@ -524,6 +528,10 @@ object frmKunde: TfrmKunde
       object tsOkonomi: TTabSheet
         Caption = #216'konomi'
         ImageIndex = -1
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object GroupBox6: TGroupBox
           Left = 8
           Top = 8
@@ -760,6 +768,10 @@ object frmKunde: TfrmKunde
         BorderWidth = 8
         Caption = 'Kontakter'
         ImageIndex = -1
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object dbgPerson: TcxGrid
           Left = 0
           Top = 0

@@ -2,8 +2,8 @@ object dmMain: TdmMain
   OldCreateOrder = False
   Height = 527
   Width = 843
-  object fqKunde: TFDQuery
-    BeforeOpen = fqKundeBeforeOpen
+  object fdKunde: TFDQuery
+    BeforeOpen = fdKundeBeforeOpen
     Connection = dmData.FDConn
     SQL.Strings = (
       'select '
@@ -20,11 +20,11 @@ object dmMain: TdmMain
         Name = 'KLIENTID'
         DataType = ftInteger
         ParamType = ptInput
-        Value = Null
+        Value = 1
       end>
   end
   object dsKunde: TDataSource
-    DataSet = fqKunde
+    DataSet = fdKunde
     Left = 40
     Top = 80
   end

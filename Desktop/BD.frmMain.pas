@@ -129,6 +129,8 @@ type
     procedure acSyncDataExecute(Sender: TObject);
     procedure acSalgExecute(Sender: TObject);
     procedure acNewExecute(Sender: TObject);
+    procedure tsKundeShow(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     procedure ShowTabs(GroupIndex: Integer);
     procedure DoLogin;
@@ -155,6 +157,11 @@ procedure TfrmMainform.DoLogin;
 begin
   Global.KlientID := 1;
 
+end;
+
+procedure TfrmMainform.FormCreate(Sender: TObject);
+begin
+  DoLogin;
 end;
 
 procedure TfrmMainform.acNewExecute(Sender: TObject);
@@ -190,5 +197,10 @@ begin
     pcPages.ActivePage := pcPages.FindNextPage(pcPages.Pages[0], True, True);
 end;
 
+
+procedure TfrmMainform.tsKundeShow(Sender: TObject);
+begin
+  dmMain.fdKunde.Open();
+end;
 
 end.

@@ -10,9 +10,9 @@ uses
 
 type
   TdmMain = class(TDataModule)
-    fqKunde: TFDQuery;
+    fdKunde: TFDQuery;
     dsKunde: TDataSource;
-    procedure fqKundeBeforeOpen(DataSet: TDataSet);
+    procedure fdKundeBeforeOpen(DataSet: TDataSet);
   private
     { Private declarations }
   public
@@ -24,15 +24,15 @@ var
 
 implementation
 
-uses BD.dmData;
+uses BD.dmData, BD.Vars;
 
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 
 {$R *.dfm}
 
-procedure TdmMain.fqKundeBeforeOpen(DataSet: TDataSet);
+procedure TdmMain.fdKundeBeforeOpen(DataSet: TDataSet);
 begin
-  fqKunde.ParamByName('KlientID').AsInteger := 1;
+  fdKunde.ParamByName('KlientID').AsInteger := Global.KlientID;
 end;
 
 end.

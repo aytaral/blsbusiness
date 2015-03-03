@@ -267,7 +267,7 @@ procedure TfrmKunde.dsMasterKundeDataChange(Sender: TObject;
 begin
   if cdsKunde.Active and (Field = nil) then begin
     cdsKunde.ApplyUpdates(-1);
-    fdKunde.Params.ParamValues['Knr'] := dmMain.fqKunde.FieldValues['Kontaktnr'];  //Dm.cdsKundeKONTAKTNR.Value;
+    fdKunde.Params.ParamValues['Knr'] := dmMain.fdKunde.FieldValues['Kontaktnr'];  //Dm.cdsKundeKONTAKTNR.Value;
     cdsKunde.Refresh;
   end;
 end;

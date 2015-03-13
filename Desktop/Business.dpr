@@ -12,8 +12,11 @@ uses
   BD.dmMain in 'BD.dmMain.pas' {dmMain: TDataModule},
   BD.Kommune in 'BD.Kommune.pas',
   BD.Postnr in 'BD.Postnr.pas',
-  BD.Kunde in 'BD.Kunde.pas' {frmKunde},
-  BD.Vars in 'BD.Vars.pas';
+  BD.frmKunde in 'BD.frmKunde.pas' {frmKunde},
+  BD.Vars in 'BD.Vars.pas',
+  BD.Kontakt in 'BD.Kontakt.pas',
+  BD.Adresse in 'BD.Adresse.pas',
+  BD.Land in 'BD.Land.pas';
 
 {$R *.res}
 

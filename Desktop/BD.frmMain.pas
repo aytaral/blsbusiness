@@ -94,7 +94,7 @@ type
     JvAppRegistryStorage: TJvAppRegistryStorage;
     splKunde: TcxSplitter;
     cxGroupBox1: TcxGroupBox;
-    cbKundeInaktive: TCheckBox;
+    cbKundeInaktiv: TCheckBox;
     ApplicationEvents: TApplicationEvents;
     tvKundeKlientID: TcxGridDBColumn;
     tvKundeKontaktnr: TcxGridDBColumn;
@@ -109,28 +109,78 @@ type
     tvKundeMobil: TcxGridDBColumn;
     tvKundeEpost: TcxGridDBColumn;
     tvKundeWeb: TcxGridDBColumn;
-    tvKundeBankkonto: TcxGridDBColumn;
     tvKundeKontakt: TcxGridDBColumn;
-    tvKundeForfallsdager: TcxGridDBColumn;
-    tvKundeKreditt: TcxGridDBColumn;
-    tvKundeRabatt: TcxGridDBColumn;
     tvKundeKontaktTypeID: TcxGridDBColumn;
     tvKundeAktiv: TcxGridDBColumn;
     tvKundeRegDato: TcxGridDBColumn;
     tvKundeEndretDato: TcxGridDBColumn;
     Panel1: TPanel;
-    cxGroupBox2: TcxGroupBox;
-    CheckBox1: TCheckBox;
     cxSplitter1: TcxSplitter;
+    edKundeSok: TEdit;
+    Label1: TLabel;
+    Button1: TButton;
+    tvKundePoststed: TcxGridDBColumn;
+    tvKundeBesokAdr1: TcxGridDBColumn;
+    tvKundeBesokAdr2: TcxGridDBColumn;
+    tvKundeBesokPostnr: TcxGridDBColumn;
+    tvKundeBankkonto: TcxGridDBColumn;
+    tvKundeForfallsdager: TcxGridDBColumn;
+    tvKundeKreditt: TcxGridDBColumn;
+    tvKundeRabatt: TcxGridDBColumn;
+    tvKundeBesokPoststed: TcxGridDBColumn;
+    cxGroupBox2: TcxGroupBox;
+    Label2: TLabel;
+    CheckBox1: TCheckBox;
+    Edit1: TEdit;
+    Button2: TButton;
     dbgLeverandor: TcxGrid;
-    cxGridDBTableView1: TcxGridDBTableView;
-    cxGridLevel1: TcxGridLevel;
+    tvLeverandor: TcxGridDBTableView;
+    dbgLeverandorLevel: TcxGridLevel;
+    tvLeverandorKlientID: TcxGridDBColumn;
+    tvLeverandorKontaktnr: TcxGridDBColumn;
+    tvLeverandorNavn: TcxGridDBColumn;
+    tvLeverandorPostAdr1: TcxGridDBColumn;
+    tvLeverandorPostAdr2: TcxGridDBColumn;
+    tvLeverandorPostnr: TcxGridDBColumn;
+    tvLeverandorBesokAdr1: TcxGridDBColumn;
+    tvLeverandorBesokAdr2: TcxGridDBColumn;
+    tvLeverandorBesokPostnr: TcxGridDBColumn;
+    tvLeverandorLandKode: TcxGridDBColumn;
+    tvLeverandorOrgnr: TcxGridDBColumn;
+    tvLeverandorTelefon: TcxGridDBColumn;
+    tvLeverandorFaks: TcxGridDBColumn;
+    tvLeverandorMobil: TcxGridDBColumn;
+    tvLeverandorEpost: TcxGridDBColumn;
+    tvLeverandorWeb: TcxGridDBColumn;
+    tvLeverandorBankkonto: TcxGridDBColumn;
+    tvLeverandorKontakt: TcxGridDBColumn;
+    tvLeverandorForfallsdager: TcxGridDBColumn;
+    tvLeverandorKreditt: TcxGridDBColumn;
+    tvLeverandorRabatt: TcxGridDBColumn;
+    tvLeverandorInfo: TcxGridDBColumn;
+    tvLeverandorSerieID: TcxGridDBColumn;
+    tvLeverandorTypeID: TcxGridDBColumn;
+    tvLeverandorPrintID: TcxGridDBColumn;
+    tvLeverandorGruppeID: TcxGridDBColumn;
+    tvLeverandorSektorKode: TcxGridDBColumn;
+    tvLeverandorBransjeKode: TcxGridDBColumn;
+    tvLeverandorRegDato: TcxGridDBColumn;
+    tvLeverandorEndretDato: TcxGridDBColumn;
+    tvLeverandorAktiv: TcxGridDBColumn;
+    tvLeverandorBrukerID: TcxGridDBColumn;
+    tvLeverandorPoststed: TcxGridDBColumn;
+    tvLeverandorBesokPoststed: TcxGridDBColumn;
+    Button3: TButton;
     procedure acExitExecute(Sender: TObject);
     procedure acSyncDataExecute(Sender: TObject);
     procedure acSalgExecute(Sender: TObject);
     procedure acNewExecute(Sender: TObject);
     procedure tsKundeShow(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure tvKundeStylesGetContentStyle(Sender: TcxCustomGridTableView;
+      ARecord: TcxCustomGridRecord; AItem: TcxCustomGridTableItem;
+      var AStyle: TcxStyle);
+    procedure edKundeSokChange(Sender: TObject);
   private
     procedure ShowTabs(GroupIndex: Integer);
     procedure DoLogin;
@@ -144,7 +194,7 @@ var
 
 implementation
 
-uses BD.dmData, BD.dmMain, BD.Settings, BD.frmSync, BD.Kunde, BD.Vars;
+uses BD.dmData, BD.dmMain, BD.Settings, BD.frmSync, BD.frmKunde, BD.Vars;
 
 {$R *.dfm}
 
@@ -157,6 +207,19 @@ procedure TfrmMainform.DoLogin;
 begin
   Global.KlientID := 1;
 
+end;
+
+procedure TfrmMainform.edKundeSokChange(Sender: TObject);
+var
+  Sql: String;
+begin
+  Sql := '';
+  if (edKundeSok.Text <> '') then
+    Sql := Sql + ' and (Navn like ''%' + edKundeSok.Text + '%'')';
+
+  dmMain.fdKunde.MacroByName('ShowInactive').AsRaw := IntToStr(Ord(cbKundeInaktiv.Checked));
+  dmMain.fdKunde.MacroByName('FilterString').AsRaw := Sql;
+  dmMain.fdKunde.Open();
 end;
 
 procedure TfrmMainform.FormCreate(Sender: TObject);
@@ -201,6 +264,14 @@ end;
 procedure TfrmMainform.tsKundeShow(Sender: TObject);
 begin
   dmMain.fdKunde.Open();
+end;
+
+procedure TfrmMainform.tvKundeStylesGetContentStyle(
+  Sender: TcxCustomGridTableView; ARecord: TcxCustomGridRecord;
+  AItem: TcxCustomGridTableItem; var AStyle: TcxStyle);
+begin
+  if ARecord.Values[tvKundeAKTIV.Index] = 0 then
+    AStyle := dmMain.cxStyleInactive;
 end;
 
 end.

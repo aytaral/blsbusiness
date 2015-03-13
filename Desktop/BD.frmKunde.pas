@@ -1,4 +1,4 @@
-unit BD.Kunde;
+unit BD.frmKunde;
 
 interface
 

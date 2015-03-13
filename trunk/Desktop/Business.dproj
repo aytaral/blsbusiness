@@ -72,8 +72,8 @@
         <DCC_RemoteDebug>true</DCC_RemoteDebug>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
-        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.107;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
-        <VerInfo_Build>107</VerInfo_Build>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.124;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Build>124</VerInfo_Build>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
@@ -108,11 +108,42 @@
         </DCCReference>
         <DCCReference Include="BD.Kommune.pas"/>
         <DCCReference Include="BD.Postnr.pas"/>
-        <DCCReference Include="BD.Kunde.pas">
+        <DCCReference Include="BD.frmKunde.pas">
             <Form>frmKunde</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="BD.Vars.pas"/>
+        <DCCReference Include="BD.Kontakt.pas"/>
+        <DCCReference Include="BD.Adresse.pas"/>
+        <DCCReference Include="BD.Land.pas"/>
+        <None Include="ModelSupport_Business\default.txaPackage"/>
+        <None Include="ModelSupport_Business\default.txvpck"/>
+        <None Include="ModelSupport_Business\BD\default.txvpck"/>
+        <None Include="ModelSupport_Business\Business\default.txvpck"/>
+        <None Include="ModelSupport_Business\Business\default.txaPackage"/>
+        <None Include="ModelSupport_Business\BD\dmData\default.txvpck"/>
+        <None Include="ModelSupport_Business\BD\dmMain\default.txvpck"/>
+        <None Include="ModelSupport_Business\BD\Kommune\default.txvpck"/>
+        <None Include="ModelSupport_Business\BD\Handler\default.txvpck"/>
+        <None Include="ModelSupport_Business\BD\frmMain\default.txvpck"/>
+        <None Include="ModelSupport_Business\BD\Settings\default.txvpck"/>
+        <None Include="ModelSupport_Business\BD\frmSync\default.txvpck"/>
+        <None Include="ModelSupport_Business\BD\Kunde\default.txvpck"/>
+        <None Include="ModelSupport_Business\BD\Postnr\default.txvpck"/>
+        <None Include="ModelSupport_Business\BD\Vars\default.txvpck"/>
+        <None Include="ModelSupport_Business\BD\Fylke\default.txvpck"/>
+        <None Include="ModelSupport_Business\BD\Fylke\default.txaPackage"/>
+        <None Include="ModelSupport_Business\BD\Postnr\default.txaPackage"/>
+        <None Include="ModelSupport_Business\BD\default.txaPackage"/>
+        <None Include="ModelSupport_Business\BD\Kunde\default.txaPackage"/>
+        <None Include="ModelSupport_Business\BD\Kontakt\default.txvpck"/>
+        <None Include="ModelSupport_Business\BD\Kontakt\default.txaPackage"/>
+        <None Include="ModelSupport_Business\BD\Kontakt\BD\default.txaPackage"/>
+        <None Include="ModelSupport_Business\BD\Kontakt\BD\default.txvpck"/>
+        <None Include="ModelSupport_Business\BD\Adresse\default.txaPackage"/>
+        <None Include="ModelSupport_Business\BD\Adresse\default.txvpck"/>
+        <None Include="ModelSupport_Business\BD\Land\default.txvpck"/>
+        <None Include="ModelSupport_Business\BD\Land\default.txaPackage"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -145,6 +176,7 @@
                 <Platform value="Win32">True</Platform>
                 <Platform value="Win64">False</Platform>
             </Platforms>
+            <ModelSupport>True</ModelSupport>
         </BorlandProject>
         <ProjectFileVersion>12</ProjectFileVersion>
     </ProjectExtensions>

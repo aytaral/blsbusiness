@@ -123,17 +123,13 @@ object frmKunde: TfrmKunde
       Top = 5
       Width = 601
       Height = 497
-      ActivePage = tsMerknader
+      ActivePage = tsKunde
       Align = alClient
       TabOrder = 0
       OnChange = PcChange
       object tsKunde: TTabSheet
         Caption = 'Generelt'
         ImageIndex = -1
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object GroupBox1: TGroupBox
           Left = 8
           Top = 8

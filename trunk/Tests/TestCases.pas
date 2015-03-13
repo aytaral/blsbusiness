@@ -35,6 +35,7 @@ type
     procedure TestFylkeLoadFromXMLAttribute;
   end;
 
+
 implementation
 
 procedure TTestHandlerObject.Setup;

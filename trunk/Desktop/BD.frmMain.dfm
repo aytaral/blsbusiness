@@ -281,16 +281,28 @@
       Tag = 1
       Caption = 'Ordre'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
     end
     object tsFaktura: TcxTabSheet
       Tag = 1
       Caption = 'Faktura'
       ImageIndex = 2
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
     end
     object tsPurring: TcxTabSheet
       Tag = 1
       Caption = 'Purring'
       ImageIndex = 3
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
     end
     object tsKunde: TcxTabSheet
       Tag = 2
@@ -312,15 +324,52 @@
           Align = alTop
           Caption = 'Filter'
           TabOrder = 0
-          Height = 65
+          DesignSize = (
+            180
+            130)
+          Height = 137
           Width = 180
-          object cbKundeInaktive: TCheckBox
+          object Label1: TLabel
             Left = 16
             Top = 24
+            Width = 21
+            Height = 13
+            Caption = 'S'#248'k:'
+          end
+          object cbKundeInaktiv: TCheckBox
+            Left = 16
+            Top = 67
             Width = 145
             Height = 17
             Caption = 'Vis inaktive kunder'
             TabOrder = 0
+            OnClick = edKundeSokChange
+          end
+          object edKundeSok: TEdit
+            Left = 16
+            Top = 40
+            Width = 149
+            Height = 21
+            Anchors = [akLeft, akTop, akRight]
+            TabOrder = 1
+            OnChange = edKundeSokChange
+          end
+          object Button1: TButton
+            Left = 91
+            Top = 90
+            Width = 72
+            Height = 25
+            Caption = 'Nullstill'
+            TabOrder = 2
+          end
+          object Button3: TButton
+            Left = 16
+            Top = 90
+            Width = 72
+            Height = 25
+            Caption = 'S'#248'k'
+            Default = True
+            TabOrder = 3
           end
         end
       end
@@ -331,7 +380,6 @@
         Height = 415
         Align = alClient
         TabOrder = 1
-        ExplicitTop = -3
         object tvKunde: TcxGridDBTableView
           Navigator.Buttons.CustomButtons = <>
           DataController.DataSource = dmMain.dsKunde
@@ -350,6 +398,7 @@
           OptionsView.ColumnAutoWidth = True
           OptionsView.GroupByBox = False
           OptionsView.Indicator = True
+          Styles.OnGetContentStyle = tvKundeStylesGetContentStyle
           object tvKundeKlientID: TcxGridDBColumn
             DataBinding.FieldName = 'KlientID'
             Visible = False
@@ -357,39 +406,66 @@
           end
           object tvKundeKontaktnr: TcxGridDBColumn
             DataBinding.FieldName = 'Kontaktnr'
-            Width = 42
+            Width = 41
           end
           object tvKundeNavn: TcxGridDBColumn
             DataBinding.FieldName = 'Navn'
-            Width = 39
+            Width = 94
           end
           object tvKundePostAdr1: TcxGridDBColumn
+            Caption = 'Adresse'
             DataBinding.FieldName = 'PostAdr1'
-            Width = 31
+            Width = 90
           end
           object tvKundePostAdr2: TcxGridDBColumn
             DataBinding.FieldName = 'PostAdr2'
-            Width = 33
+            Visible = False
+            Width = 24
           end
           object tvKundePostnr: TcxGridDBColumn
             DataBinding.FieldName = 'Postnr'
-            Width = 20
+            MinWidth = 38
+            Options.HorzSizing = False
+            Width = 38
+          end
+          object tvKundePoststed: TcxGridDBColumn
+            DataBinding.FieldName = 'Poststed'
+            Width = 68
+          end
+          object tvKundeBesokAdr1: TcxGridDBColumn
+            DataBinding.FieldName = 'BesokAdr1'
+            Visible = False
+          end
+          object tvKundeBesokAdr2: TcxGridDBColumn
+            DataBinding.FieldName = 'BesokAdr2'
+            Visible = False
+          end
+          object tvKundeBesokPostnr: TcxGridDBColumn
+            DataBinding.FieldName = 'BesokPostnr'
+            Visible = False
+          end
+          object tvKundeBesokPoststed: TcxGridDBColumn
+            DataBinding.FieldName = 'BesokPoststed'
+            Visible = False
           end
           object tvKundeLandKode: TcxGridDBColumn
+            Caption = 'Land'
             DataBinding.FieldName = 'LandKode'
-            Width = 20
+            Width = 51
           end
           object tvKundeOrgnr: TcxGridDBColumn
             DataBinding.FieldName = 'Orgnr'
-            Width = 35
+            Visible = False
+            Width = 34
           end
           object tvKundeTelefon: TcxGridDBColumn
             DataBinding.FieldName = 'Telefon'
-            Width = 20
+            Width = 67
           end
           object tvKundeFaks: TcxGridDBColumn
             DataBinding.FieldName = 'Faks'
-            Width = 22
+            Visible = False
+            Width = 27
           end
           object tvKundeMobil: TcxGridDBColumn
             DataBinding.FieldName = 'Mobil'
@@ -397,39 +473,25 @@
           end
           object tvKundeEpost: TcxGridDBColumn
             DataBinding.FieldName = 'Epost'
-            Width = 111
+            Width = 79
           end
           object tvKundeWeb: TcxGridDBColumn
             DataBinding.FieldName = 'Web'
-            Width = 138
-          end
-          object tvKundeBankkonto: TcxGridDBColumn
-            DataBinding.FieldName = 'Bankkonto'
-            Width = 23
+            Width = 93
           end
           object tvKundeKontakt: TcxGridDBColumn
             DataBinding.FieldName = 'Kontakt'
-            Width = 42
-          end
-          object tvKundeForfallsdager: TcxGridDBColumn
-            DataBinding.FieldName = 'Forfallsdager'
-            Width = 20
-          end
-          object tvKundeKreditt: TcxGridDBColumn
-            DataBinding.FieldName = 'Kreditt'
-            Width = 20
-          end
-          object tvKundeRabatt: TcxGridDBColumn
-            DataBinding.FieldName = 'Rabatt'
-            Width = 26
+            Width = 36
           end
           object tvKundeKontaktTypeID: TcxGridDBColumn
             DataBinding.FieldName = 'KontaktTypeID'
-            Width = 20
+            Width = 25
           end
           object tvKundeAktiv: TcxGridDBColumn
             DataBinding.FieldName = 'Aktiv'
-            Width = 20
+            Visible = False
+            VisibleForCustomization = False
+            Width = 32
           end
           object tvKundeRegDato: TcxGridDBColumn
             DataBinding.FieldName = 'RegDato'
@@ -437,6 +499,22 @@
           end
           object tvKundeEndretDato: TcxGridDBColumn
             DataBinding.FieldName = 'EndretDato'
+            Visible = False
+          end
+          object tvKundeBankkonto: TcxGridDBColumn
+            DataBinding.FieldName = 'Bankkonto'
+            Visible = False
+          end
+          object tvKundeForfallsdager: TcxGridDBColumn
+            DataBinding.FieldName = 'Forfallsdager'
+            Visible = False
+          end
+          object tvKundeKreditt: TcxGridDBColumn
+            DataBinding.FieldName = 'Kreditt'
+            Visible = False
+          end
+          object tvKundeRabatt: TcxGridDBColumn
+            DataBinding.FieldName = 'Rabatt'
             Visible = False
           end
         end
@@ -461,6 +539,10 @@
       BorderWidth = 4
       Caption = 'Leverand'#248'r'
       ImageIndex = 5
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Panel1: TPanel
         Left = 0
         Top = 0
@@ -475,15 +557,42 @@
           Align = alTop
           Caption = 'Filter'
           TabOrder = 0
-          Height = 65
+          ExplicitTop = 8
+          DesignSize = (
+            180
+            130)
+          Height = 137
           Width = 180
-          object CheckBox1: TCheckBox
+          object Label2: TLabel
             Left = 16
             Top = 24
+            Width = 21
+            Height = 13
+            Caption = 'S'#248'k:'
+          end
+          object CheckBox1: TCheckBox
+            Left = 16
+            Top = 67
             Width = 145
             Height = 17
             Caption = 'Vis inaktive leverand'#248'rer'
             TabOrder = 0
+          end
+          object Edit1: TEdit
+            Left = 16
+            Top = 40
+            Width = 149
+            Height = 21
+            Anchors = [akLeft, akTop, akRight]
+            TabOrder = 1
+          end
+          object Button2: TButton
+            Left = 16
+            Top = 90
+            Width = 75
+            Height = 25
+            Caption = 'Nullstill'
+            TabOrder = 2
           end
         end
       end
@@ -505,9 +614,10 @@
         Height = 415
         Align = alClient
         TabOrder = 2
-        object cxGridDBTableView1: TcxGridDBTableView
+        ExplicitTop = -3
+        object tvLeverandor: TcxGridDBTableView
           Navigator.Buttons.CustomButtons = <>
-          DataController.DataSource = dmMain.dsKunde
+          DataController.DataSource = dmMain.dsLeverandor
           DataController.Summary.DefaultGroupSummaryItems = <>
           DataController.Summary.FooterSummaryItems = <>
           DataController.Summary.SummaryGroups = <>
@@ -518,12 +628,117 @@
           OptionsData.Editing = False
           OptionsData.Inserting = False
           OptionsSelection.CellSelect = False
+          OptionsView.CellEndEllipsis = True
           OptionsView.NoDataToDisplayInfoText = ' '
+          OptionsView.ColumnAutoWidth = True
           OptionsView.GroupByBox = False
           OptionsView.Indicator = True
+          Styles.OnGetContentStyle = tvKundeStylesGetContentStyle
+          object tvLeverandorKlientID: TcxGridDBColumn
+            DataBinding.FieldName = 'KlientID'
+          end
+          object tvLeverandorKontaktnr: TcxGridDBColumn
+            DataBinding.FieldName = 'Kontaktnr'
+          end
+          object tvLeverandorNavn: TcxGridDBColumn
+            DataBinding.FieldName = 'Navn'
+          end
+          object tvLeverandorPostAdr1: TcxGridDBColumn
+            DataBinding.FieldName = 'PostAdr1'
+          end
+          object tvLeverandorPostAdr2: TcxGridDBColumn
+            DataBinding.FieldName = 'PostAdr2'
+          end
+          object tvLeverandorPostnr: TcxGridDBColumn
+            DataBinding.FieldName = 'Postnr'
+          end
+          object tvLeverandorBesokAdr1: TcxGridDBColumn
+            DataBinding.FieldName = 'BesokAdr1'
+          end
+          object tvLeverandorBesokAdr2: TcxGridDBColumn
+            DataBinding.FieldName = 'BesokAdr2'
+          end
+          object tvLeverandorBesokPostnr: TcxGridDBColumn
+            DataBinding.FieldName = 'BesokPostnr'
+          end
+          object tvLeverandorLandKode: TcxGridDBColumn
+            DataBinding.FieldName = 'LandKode'
+          end
+          object tvLeverandorOrgnr: TcxGridDBColumn
+            DataBinding.FieldName = 'Orgnr'
+          end
+          object tvLeverandorTelefon: TcxGridDBColumn
+            DataBinding.FieldName = 'Telefon'
+          end
+          object tvLeverandorFaks: TcxGridDBColumn
+            DataBinding.FieldName = 'Faks'
+          end
+          object tvLeverandorMobil: TcxGridDBColumn
+            DataBinding.FieldName = 'Mobil'
+          end
+          object tvLeverandorEpost: TcxGridDBColumn
+            DataBinding.FieldName = 'Epost'
+          end
+          object tvLeverandorWeb: TcxGridDBColumn
+            DataBinding.FieldName = 'Web'
+          end
+          object tvLeverandorBankkonto: TcxGridDBColumn
+            DataBinding.FieldName = 'Bankkonto'
+          end
+          object tvLeverandorKontakt: TcxGridDBColumn
+            DataBinding.FieldName = 'Kontakt'
+          end
+          object tvLeverandorForfallsdager: TcxGridDBColumn
+            DataBinding.FieldName = 'Forfallsdager'
+          end
+          object tvLeverandorKreditt: TcxGridDBColumn
+            DataBinding.FieldName = 'Kreditt'
+          end
+          object tvLeverandorRabatt: TcxGridDBColumn
+            DataBinding.FieldName = 'Rabatt'
+          end
+          object tvLeverandorInfo: TcxGridDBColumn
+            DataBinding.FieldName = 'Info'
+          end
+          object tvLeverandorSerieID: TcxGridDBColumn
+            DataBinding.FieldName = 'SerieID'
+          end
+          object tvLeverandorTypeID: TcxGridDBColumn
+            DataBinding.FieldName = 'TypeID'
+          end
+          object tvLeverandorPrintID: TcxGridDBColumn
+            DataBinding.FieldName = 'PrintID'
+          end
+          object tvLeverandorGruppeID: TcxGridDBColumn
+            DataBinding.FieldName = 'GruppeID'
+          end
+          object tvLeverandorSektorKode: TcxGridDBColumn
+            DataBinding.FieldName = 'SektorKode'
+          end
+          object tvLeverandorBransjeKode: TcxGridDBColumn
+            DataBinding.FieldName = 'BransjeKode'
+          end
+          object tvLeverandorRegDato: TcxGridDBColumn
+            DataBinding.FieldName = 'RegDato'
+          end
+          object tvLeverandorEndretDato: TcxGridDBColumn
+            DataBinding.FieldName = 'EndretDato'
+          end
+          object tvLeverandorAktiv: TcxGridDBColumn
+            DataBinding.FieldName = 'Aktiv'
+          end
+          object tvLeverandorBrukerID: TcxGridDBColumn
+            DataBinding.FieldName = 'BrukerID'
+          end
+          object tvLeverandorPoststed: TcxGridDBColumn
+            DataBinding.FieldName = 'Poststed'
+          end
+          object tvLeverandorBesokPoststed: TcxGridDBColumn
+            DataBinding.FieldName = 'BesokPoststed'
+          end
         end
-        object cxGridLevel1: TcxGridLevel
-          GridView = cxGridDBTableView1
+        object dbgLeverandorLevel: TcxGridLevel
+          GridView = tvLeverandor
         end
       end
     end
@@ -531,21 +746,37 @@
       Tag = 2
       Caption = 'Person'
       ImageIndex = 6
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
     end
     object tsProdukt: TcxTabSheet
       Tag = 3
       Caption = 'Produkt'
       ImageIndex = 7
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
     end
     object tsBilag: TcxTabSheet
       Tag = 4
       Caption = 'Bilag'
       ImageIndex = 8
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
     end
     object tsKonto: TcxTabSheet
       Tag = 4
       Caption = 'Konto'
       ImageIndex = 9
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
     end
   end
   object dxBarManager: TdxBarManager

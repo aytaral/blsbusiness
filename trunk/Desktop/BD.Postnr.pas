@@ -7,12 +7,23 @@ uses System.SysUtils, System.Classes, Data.DB, OXmlPDOM, BD.Kommune,
 
 type
 
+  IPostnr = interface
+    ['{DFD4303D-5509-4407-8E68-681410898768}']
+    function GetPostnr: String;
+    procedure SetPostnr(const Value: String);
+    function GetPoststed: String;
+    procedure SetPoststed(const Value: String);
+
+    property Postnr: String read GetPostnr write SetPostnr;
+    property Poststed: String read GetPoststed write SetPoststed;
+  end;
+
   TPostnr = class(TObject)
   private
-    FKommunenr: String;
     FPostnr: String;
     FPoststed: String;
     FLandKode: String;
+    FKommunenr: String;
     FKommune: TKommune;
   published
     property Postnr: String read FPostnr write FPostnr;
@@ -27,22 +38,12 @@ type
   TPostnrHandler = class(THandler)
     class function LoadFromXMLNode(PostnrNode: PXMLNode;
       const Mapping: TMapList): TPostnr;
-    class function LinkToKommune(APostnr: TPostnr;
-      KommuneListe: TKommuneListe): Boolean;
     class function NewPostnrListe: TPostnrListe;
   end;
-
-
 
 implementation
 
 { TPostnrHandler }
-
-class function TPostnrHandler.LinkToKommune(APostnr: TPostnr;
-  KommuneListe: TKommuneListe): Boolean;
-begin
-
-end;
 
 class function TPostnrHandler.LoadFromXMLNode(PostnrNode: PXMLNode;
   const Mapping: TMapList): TPostnr;

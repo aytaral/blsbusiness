@@ -16,7 +16,8 @@ uses
   BD.Vars in 'BD.Vars.pas',
   BD.Kontakt in 'BD.Kontakt.pas',
   BD.Adresse in 'BD.Adresse.pas',
-  BD.Land in 'BD.Land.pas';
+  BD.Land in 'BD.Land.pas',
+  BD.KontaktListe in 'BD.KontaktListe.pas';
 
 {$R *.res}
 

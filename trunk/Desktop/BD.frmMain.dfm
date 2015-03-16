@@ -539,10 +539,6 @@
       BorderWidth = 4
       Caption = 'Leverand'#248'r'
       ImageIndex = 5
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Panel1: TPanel
         Left = 0
         Top = 0
@@ -557,7 +553,6 @@
           Align = alTop
           Caption = 'Filter'
           TabOrder = 0
-          ExplicitTop = 8
           DesignSize = (
             180
             130)

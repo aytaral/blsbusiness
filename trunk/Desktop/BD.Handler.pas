@@ -9,7 +9,6 @@ type
   TMapList = TDictionary<String, String>;
 
   THandler = class(TObject)
-    class function NewObjectList<T: class>: IList<T>;
     class procedure SetDatabaseFields(AObject: TObject; ADataSet: TDataSet;
       const Mapping: TMapList); static;
     class procedure MergeIntoDatabase(AObject: TObject; ADataSet: TDataSet;
@@ -20,11 +19,6 @@ type
 implementation
 
 { THandler }
-
-class function THandler.NewObjectList<T>: IList<T>;
-begin
-  Result := TCollections.CreateObjectList<T>;
-end;
 
 class procedure THandler.SetDatabaseFields(AObject: TObject; ADataSet: TDataSet;
   const Mapping: TMapList);

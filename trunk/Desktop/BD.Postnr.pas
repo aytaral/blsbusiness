@@ -2,12 +2,12 @@ unit BD.Postnr;
 
 interface
 
-uses System.SysUtils, System.Classes, Data.DB, OXmlPDOM, BD.Kommune,
+uses System.SysUtils, System.Classes, Data.DB, OXmlPDOM, BD.Kommune, BD.Land,
   Generics.Collections, System.TypInfo, BD.Handler, Spring.Collections;
 
 type
 
-  IPostnr = interface
+  IPostnr = interface(ILand)
     ['{DFD4303D-5509-4407-8E68-681410898768}']
     function GetPostnr: String;
     procedure SetPostnr(const Value: String);
@@ -17,6 +17,21 @@ type
     property Postnr: String read GetPostnr write SetPostnr;
     property Poststed: String read GetPoststed write SetPoststed;
   end;
+
+  TBasePostnr = class
+  private
+    FPostnr: String;
+    FPoststed: String;
+  protected
+    function GetPostnr: String;
+    function GetPoststed: String;
+    procedure SetPostnr(const Value: String);
+    procedure SetPoststed(const Value: String);
+  public
+    property Postnr: String read GetPostnr write SetPostnr;
+    property Poststed: String read GetPoststed write SetPoststed;
+  end;
+
 
   TPostnr = class(TObject)
   private
@@ -36,7 +51,7 @@ type
   TPostnrListe = IList<TPostnr>;
 
   TPostnrHandler = class(THandler)
-    class function LoadFromXMLNode(PostnrNode: PXMLNode;
+    class function Load(PostnrNode: PXMLNode;
       const Mapping: TMapList): TPostnr;
     class function NewPostnrListe: TPostnrListe;
   end;
@@ -45,28 +60,37 @@ implementation
 
 { TPostnrHandler }
 
-class function TPostnrHandler.LoadFromXMLNode(PostnrNode: PXMLNode;
+class function TPostnrHandler.Load(PostnrNode: PXMLNode;
   const Mapping: TMapList): TPostnr;
-var
-  ANode: PXMLNode;
-  APostnr: TPostnr;
-  Key: String;
 begin
-  Result := nil;
-
-  APostnr := TPostnr.Create;
-  for Key in Mapping.Keys do
-    if PostnrNode.SelectNode(Mapping.Items[Key], ANode) then
-      SetPropValue(APostnr, Key, ANode.Text);
-
-  if APostnr.Postnr <> '' then
-    Result := APostnr;
+  LoadFromXML<TPostnr>(PostnrNode, Mapping);
 end;
 
 class function TPostnrHandler.NewPostnrListe: TPostnrListe;
 begin
-  Result := NewObjectList<TPostnr>;
+  Result := TCollections.CreateObjectList<TPostnr>;
 end;
 
+{ TBasePostnr }
+
+function TBasePostnr.GetPostnr: String;
+begin
+  Result := FPostnr;
+end;
+
+function TBasePostnr.GetPoststed: String;
+begin
+  Result := FPoststed;
+end;
+
+procedure TBasePostnr.SetPostnr(const Value: String);
+begin
+  FPostnr := Value;
+end;
+
+procedure TBasePostnr.SetPoststed(const Value: String);
+begin
+  FPoststed := Value;
+end;
 
 end.

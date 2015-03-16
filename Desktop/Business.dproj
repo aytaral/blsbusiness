@@ -72,8 +72,8 @@
         <DCC_RemoteDebug>true</DCC_RemoteDebug>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
-        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.124;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
-        <VerInfo_Build>124</VerInfo_Build>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.136;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Build>136</VerInfo_Build>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
@@ -116,6 +116,7 @@
         <DCCReference Include="BD.Kontakt.pas"/>
         <DCCReference Include="BD.Adresse.pas"/>
         <DCCReference Include="BD.Land.pas"/>
+        <DCCReference Include="BD.KontaktListe.pas"/>
         <None Include="ModelSupport_Business\default.txaPackage"/>
         <None Include="ModelSupport_Business\default.txvpck"/>
         <None Include="ModelSupport_Business\BD\default.txvpck"/>

@@ -5,10 +5,11 @@ interface
 uses System.Classes, System.SysUtils, BD.Postnr, BD.Land;
 
 type
-  IAdresse = interface
+  IAdresse = interface(IPostnr)
     ['{88446A75-3C46-4F83-8B03-FFC7F238839C}']
     function GetAdresse: TStrings;
     function GetFullAdresse: TStrings;
+    function LineCount: Integer;
     function GetLine(Index: Integer): String;
     procedure SetLine(Index: Integer; const Value: string);
 
@@ -39,6 +40,7 @@ type
     destructor Destroy; override;
     function GetAdresse: TStrings;
     function GetFullAdresse: TStrings;
+    function LineCount: Integer;
     property Line[Index: Integer]: String read GetLine write SetLine;
     property Postnr: String read GetPostnr write SetPostnr;
     property Poststed: String read GetPoststed write SetPoststed;
@@ -69,7 +71,8 @@ begin
   //Generer full adresse
   for I := Low(FLine) to High(FLine) do
     FAdresse.Add(FLine[I]);
-  FAdresse.Add(FLandkode +  '-' + FPostnr + ' ' + FPostSted);
+  FAdresse.Add(FPostnr + ' ' + FPostSted);
+
   Result := FAdresse;
 end;
 
@@ -104,6 +107,11 @@ end;
 function TAdresse.GetPoststed: String;
 begin
   Result := FPoststed;
+end;
+
+function TAdresse.LineCount: Integer;
+begin
+  Result := High(FLine);
 end;
 
 procedure TAdresse.SetLand(const Value: String);

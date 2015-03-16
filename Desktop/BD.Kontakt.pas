@@ -5,7 +5,12 @@ interface
 uses System.Classes, System.SysUtils, BD.Adresse, BD.Land;
 
 type
-  Kontakt = class
+  IKontakt = interface
+    ['{E8AE44F1-EC6E-466A-A378-E7437DFC9523}']
+
+  end;
+
+  TKontakt = class
   private
     FNavn: String;
     FKlientID: Integer;
@@ -20,14 +25,14 @@ type
     procedure SetKontaktnr(const Value: Integer);
     procedure SetNavn(const Value: String);
     function GetBesokAdresse: TAdresse;
-    function GetPostAdresse: TAdresse;
+    function GetPostAdresse: IAdresse;
   public
     constructor Create;
   published
     property Navn: String read GetNavn write SetNavn;
     property KlientID: Integer read GetKlientID write SetKlientID;
     property Kontaktnr: Integer read GetKontaktnr write SetKontaktnr;
-    property PostAdresse: TAdresse read GetPostAdresse;
+    property PostAdresse: IAdresse read GetPostAdresse;
     property BesokAdresse: TAdresse read GetBesokAdresse;
   end;
 
@@ -35,48 +40,48 @@ implementation
 
 { Kontakt }
 
-constructor Kontakt.Create;
+constructor TKontakt.Create;
 begin
   FPAdresse := TAdresse.Create;
   FBAdresse := TAdresse.Create;
 end;
 
-function Kontakt.GetBesokAdresse: TAdresse;
+function TKontakt.GetBesokAdresse: TAdresse;
 begin
   Result := FBAdresse;
 end;
 
-function Kontakt.GetKlientID: Integer;
+function TKontakt.GetKlientID: Integer;
 begin
   Result := FKlientID;
 end;
 
-function Kontakt.GetKontaktnr: Integer;
+function TKontakt.GetKontaktnr: Integer;
 begin
   Result := FKontaktnr;
 end;
 
-function Kontakt.GetNavn: String;
+function TKontakt.GetNavn: String;
 begin
   Result := FNavn;
 end;
 
-function Kontakt.GetPostAdresse: TAdresse;
+function TKontakt.GetPostAdresse: IAdresse;
 begin
   Result := FPAdresse;
 end;
 
-procedure Kontakt.SetKlientID(const Value: Integer);
+procedure TKontakt.SetKlientID(const Value: Integer);
 begin
   FKlientID := Value;
 end;
 
-procedure Kontakt.SetKontaktnr(const Value: Integer);
+procedure TKontakt.SetKontaktnr(const Value: Integer);
 begin
   FKontaktnr := Value;
 end;
 
-procedure Kontakt.SetNavn(const Value: String);
+procedure TKontakt.SetNavn(const Value: String);
 begin
   FNavn := Value;
 end;

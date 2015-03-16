@@ -25,7 +25,7 @@ type
   TKommuneListe = IList<TKommune>;
 
   TKommuneHandler = class(THandler)
-    class function LoadFromXMLNode(KommuneNode: PXMLNode;
+    class function Load(KommuneNode: PXMLNode;
       const Mapping: TMapList): TKommune;
     class function LinkToFylke(AKommune: TKommune;
       FylkeListe: TFylkeListe): Boolean;
@@ -49,27 +49,15 @@ begin
     ) then AKommune.Fylke := F;
 end;
 
-class function TKommuneHandler.LoadFromXMLNode(KommuneNode: PXMLNode;
+class function TKommuneHandler.Load(KommuneNode: PXMLNode;
   const Mapping: TMapList): TKommune;
-var
-  ANode: PXMLNode;
-  AKommune: TKommune;
-  Key: String;
 begin
-  Result := nil;
-
-  AKommune := TKommune.Create;
-  for Key in Mapping.Keys do
-    if KommuneNode.SelectNode(Mapping.Items[Key], ANode) then
-      SetPropValue(AKommune, Key, ANode.Text);
-
-  if AKommune.Kommune <> '' then
-    Result := AKommune;
+  LoadFromXML<TKommune>(KommuneNode, Mapping);
 end;
 
 class function TKommuneHandler.NewKommuneListe: TKommuneListe;
 begin
-  Result := NewObjectList<TKommune>;
+  Result := TCollections.CreateObjectList<TKommune>;
 end;
 
 { TKommune }

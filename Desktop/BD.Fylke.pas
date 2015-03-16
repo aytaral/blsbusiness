@@ -35,7 +35,7 @@ end;
 
 class function TFylkeHandler.NewFylkeListe: TFylkeListe;
 begin
-  Result := NewObjectList<TFylke>;
+  Result := TCollections.CreateObjectList<TFylke>;
 end;
 
 end.

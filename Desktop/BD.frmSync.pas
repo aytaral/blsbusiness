@@ -54,7 +54,6 @@ procedure TfrmDataSync.IterateFylke(AFylke: PXMLNode);
 var
   MyFylke: TFylke;
 begin
-  //MyFylke := TFylkeHandler.LoadFromXMLNode(AFylke, Map);
   MyFylke := TFylkeHandler.Load(AFylke, Map);
   if MyFylke <> nil then
     FylkeListe.Add(MyFylke);
@@ -64,7 +63,7 @@ procedure TfrmDataSync.IterateKommune(AKommune: PXMLNode);
 var
   MyKommune: TKommune;
 begin
-  MyKommune := TKommuneHandler.LoadFromXMLNode(AKommune, Map);
+  MyKommune := TKommuneHandler.Load(AKommune, Map);
   if MyKommune <> nil then begin
     TKommuneHandler.LinkToFylke(MyKommune, FylkeListe);
     KommuneListe.Add(MyKommune);
@@ -78,7 +77,8 @@ var
   FKommune: TKommune;
   KNode: PXMLNode;
 begin
-  MyPostnr := TPostnrHandler.LoadFromXMLNode(APostnr, Map);
+  //MyPostnr := TPostnrHandler.LoadFromXMLNode(APostnr, Map);
+  MyPostnr := TPostnrHandler.LoadFromXML<TPostnr>(APostnr, Map);
   if MyPostnr <> nil then begin
 
     //Linker til kommune
@@ -242,7 +242,7 @@ procedure TfrmDataSync.FormCreate(Sender: TObject);
 begin
   //Felles lister
   Map := TMapList.Create;
-  FylkeListe := TFylkeHandler.NewObjectList<TFylke>;
+  FylkeListe := TFylkeHandler.NewFylkeListe;
   KommuneListe := TKommuneHandler.NewKommuneListe;
   PostnrListe := TPostnrHandler.NewPostnrListe;
 end;
